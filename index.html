@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIOM Navbar</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .active {
+            color: #55b331;
+        }
+
+        .brand-green-filter {
+            filter: invert(58%) sepia(82%) saturate(395%) hue-rotate(61deg) brightness(92%) contrast(85%);
+        }
+
+        .how-it-works-circle {
+            width: 256px;
+            height: 256px;
+            background-color: #f1f9f0;
+            border: 0.5px solid rgba(85, 179, 49, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-white py-4 px-6 md:px-12" style="position: sticky; top: 0; z-index: 999;">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+
+            <div class="flex-shrink-0">
+                <div class="h-12 w-32 bg-gray-100 flex items-center justify-center text-xs text-gray-400">
+                    <img src="assets/images/viom-logo.jpeg" alt="">
+                </div>
+            </div>
+
+            <ul class="hidden lg:flex items-center space-x-10 text-[18px] font-normal text-gray-900">
+                <li><a href="#" class="hover:text-green-600 transition active">Home</a></li>
+                <li><a href="#" class="hover:text-green-600 transition">Services</a></li>
+                <li><a href="#" class="hover:text-green-600 transition">About Us</a></li>
+                <li><a href="#" class="hover:text-green-600 transition">Contact Us</a></li>
+            </ul>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="flex items-center border border-gray-800 rounded-full pl-1 pr-6 py-1 h-12">
+                    <div class="bg-[#222] text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <span class="font-medium text-gray-900">+81 9087367892</span>
+                </div>
+
+                <a href="#"
+                    class="bg-[#FCD303] hover:bg-yellow-400 text-black font-semibold px-8 py-3 rounded-full h-12 flex items-center transition">
+                    Free Quote
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="lg:hidden text-gray-800 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 space-y-4 pb-4 transition-all">
+            <a href="#" class="block text-lg border-b pb-2">Home</a>
+            <a href="#" class="block text-lg border-b pb-2">Services</a>
+            <a href="#" class="block text-lg border-b pb-2">About Us</a>
+            <a href="#" class="block text-lg border-b pb-2">Contact Us</a>
+            <div class="flex flex-col space-y-3 pt-2">
+                <div class="flex items-center text-gray-900 font-medium">
+                    <i class="fa fa-phone mr-3 text-green-600"></i> +81 9087367892
+                </div>
+                <a href="#" class="bg-[#FCD303] text-center py-3 rounded-full font-bold">Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative bg-white overflow-hidden">
+        <div class="container mx-auto px-0 md:px-6 md:py-4">
+            <div
+                class="relative flex flex-col lg:flex-row w-full bg-[#f8f9f4] md:bg-transparent rounded-none md:rounded-[4rem] overflow-hidden">
+
+                <div class="relative w-full h-[480px] md:h-[600px] lg:h-[700px]">
+                    <img src="assets/images/hero-2.jpg" alt="VIOM Cleaning Services"
+                        class="w-full h-full object-cover object-[80%_center] md:object-center md:rounded-[4rem]">
+
+                    <div class="absolute inset-0 bg-black/10 md:hidden pointer-events-none"></div>
+                </div>
+
+                <div
+                    class="relative -mt-32 md:mt-0 md:absolute md:inset-y-0 md:left-0 flex items-center w-full md:w-[600px] lg:w-[720px] px-4 pb-12 md:p-12 z-10">
+
+                    <div
+                        class="bg-[#f8f9f4] md:bg-white/40 md:backdrop-blur-xl p-8 md:p-14 rounded-t-[4rem] rounded-b-[3rem] md:rounded-[3.5rem] shadow-2xl md:shadow-2xl border-none md:border border-white/40 ring-0 md:ring-1 ring-black/5">
+
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="flex h-2.5 w-2.5 rounded-full bg-[#55b331] animate-pulse"></span>
+                            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#081c3a]/70">
+                                Premium Cleaning • Melbourne
+                            </span>
+                        </div>
+
+                        <h1
+                            class="text-[34px] md:text-[48px] font-extrabold text-[#081c3a] leading-[1.1] mb-6 tracking-tight">
+                            Sparkly Residential & <br class="hidden md:block">
+                            <span class="text-[#55b331]">Commercial</span> Services
+                        </h1>
+
+                        <p class="text-slate-600 text-lg md:text-xl leading-relaxed mb-10 font-medium">
+                            Stop wasting your precious free time cleaning. Relax while <span
+                                class="text-[#081c3a] font-bold">VIOM</span> makes your home sparkle!
+                        </p>
+
+                        <div class="flex flex-row items-center gap-3 md:gap-4 mb-10">
+                            <a href="#"
+                                class="flex-1 md:flex-none text-center bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-black py-5 px-8 md:px-10 rounded-full transition-all text-base md:text-lg shadow-xl shadow-yellow-500/20 active:scale-95">
+                                Free Quote
+                            </a>
+                            <a href="#"
+                                class="flex-1 md:flex-none text-center bg-white border-2 border-[#55b331]/20 text-[#081c3a] font-bold py-[18px] px-8 md:px-10 rounded-full hover:bg-[#55b331] hover:text-white transition-all text-base md:text-lg active:scale-95">
+                                Services
+                            </a>
+                        </div>
+
+                        <div
+                            class="flex flex-wrap items-center gap-x-6 gap-y-4 pt-8 border-t border-gray-200 md:border-white/30">
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#55b331] rounded-full p-1 shadow-sm">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
+                                        viewBox="0 0 24 24">
+                                        <path d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-[#081c3a] font-bold text-sm">Professional</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#55b331] rounded-full p-1 shadow-sm">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
+                                        viewBox="0 0 24 24">
+                                        <path d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-[#081c3a] font-bold text-sm">Friendly</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="bg-[#55b331] rounded-full p-1 shadow-sm">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
+                                        viewBox="0 0 24 24">
+                                        <path d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-[#081c3a] font-bold text-sm">Convenient</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="howitworks" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-24">
+                <p class="text-[13px] font-normal text-black-400 uppercase tracking-[0.2em] mb-0">How it works</p>
+                <h2 class="text-[50px] md:text-[50px] font-normal text-[#081c3a] tracking-tight leading-none">Quick
+                    and Easy</h2>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto space-y-12 md:space-y-0">
+
+                <div class="flex flex-col items-center text-center w-full md:w-[320px] group">
+                    <div class="relative">
+                        <div
+                            class="absolute -top-4 -left-1 z-20 -rotate-[10deg] transition-transform duration-500 group-hover:rotate-[5deg]">
+                            <img src="assets/images/green-leaves.svg" class="w-16 h-16" alt="leaves">
+                        </div>
+
+                        <div class="how-it-works-circle rounded-full flex items-center justify-center relative">
+                            <div
+                                class="bg-[#55b331] w-[86px] h-[86px] rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-green-900/10">
+                                <i class="fa-solid fa-calendar-check text-white text-4xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="text-[28px] font-bold text-[#081c3a] mt-4 mb-3">Free Quote</h4>
+                    <p class="text-gray-500 text-[16px] leading-relaxed px-4">Tell us about your home and choose the
+                        date you want.</p>
+                </div>
+
+                <div class="h-full md:h-50 px-4">
+                    <svg class="w-12 h-12 md:w-32 md:h-8 text-[#8cc63f]/60 rotate-90 md:rotate-0" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 100 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h90m0 0l-10-10m10 10l-10 10" />
+                    </svg>
+                </div>
+
+                <div class="flex flex-col items-center text-center w-full md:w-[320px] group">
+                    <div class="relative">
+                        <div
+                            class="absolute -top-13 left-1/2 -translate-x-1/2 z-20 -rotate-[-30deg] transition-transform duration-500 group-hover:rotate-[50deg]">
+                            <img src="assets/images/green-leaves.svg" class="w-16 h-16" alt="leaves">
+                        </div>
+
+                        <div class="how-it-works-circle rounded-full flex items-center justify-center relative">
+                            <img src="assets/images/window-cleaning.svg" class="w-32 h-32 brand-green-filter"
+                                alt="Clean">
+                        </div>
+                    </div>
+                    <h4 class="text-[28px] font-bold text-[#081c3a] mt-4 mb-3">Clean</h4>
+                    <p class="text-gray-500 text-[16px] leading-relaxed px-4">Our seasoned team of full-time cleaners
+                        will transform your home.</p>
+                </div>
+
+                <div class="h-full md:h-50 px-4">
+                    <svg class="w-12 h-12 md:w-32 md:h-8 text-[#8cc63f]/60 rotate-90 md:rotate-0" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 100 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h90m0 0l-10-10m10 10l-10 10" />
+                    </svg>
+                </div>
+
+                <div class="flex flex-col items-center text-center w-full md:w-[320px] group">
+                    <div class="relative">
+                        <div
+                            class="absolute -top-5 -right-1 z-20 rotate-[45deg] transition-transform duration-500 group-hover:rotate-[65deg]">
+                            <img src="assets/images/green-leaves.svg" class="w-16 h-16" alt="leaves">
+                        </div>
+
+                        <div class="how-it-works-circle rounded-full flex items-center justify-center relative">
+                            <img src="assets/images/relax.svg" class="w-32 h-32 brand-green-filter" alt="Relax">
+                        </div>
+                    </div>
+                    <h4 class="text-[28px] font-bold text-[#081c3a] mt-4 mb-3">Relax</h4>
+                    <p class="text-gray-500 text-[16px] leading-relaxed px-4">Sit back and enjoy how amazing your home
+                        or business looks now.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const btn = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
