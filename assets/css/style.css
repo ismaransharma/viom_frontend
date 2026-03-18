@@ -1,0 +1,60 @@
+ @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+
+ body {
+     font-family: 'Outfit', sans-serif;
+     scroll-behavior: smooth;
+ }
+
+ .active {
+     color: #55b331;
+ }
+
+ .brand-green-filter {
+     filter: invert(58%) sepia(82%) saturate(395%) hue-rotate(61deg) brightness(92%) contrast(85%);
+ }
+
+ .how-it-works-circle {
+     width: 256px;
+     height: 256px;
+     background-color: #f1f9f0;
+     border: 0.5px solid rgba(85, 179, 49, 0.4);
+ }
+
+ .bg-brand-green {
+     background-color: #2da10e;
+ }
+
+ .about-container {
+     background-color: #f8f9f4;
+     border-radius: 3rem;
+ }
+
+ .feature-card {
+     background-color: #f1f9f0;
+     border-radius: 1.5rem;
+     transition: transform 0.3s ease;
+ }
+
+ .feature-card:hover {
+     transform: translateY(-5px);
+ }
+
+ .slanted-card {
+     background-color: #f1f9f0;
+     border-radius: 1rem 2rem 2rem 2rem;
+     clip-path: polygon(0% 0%, 100% 6%, 100% 100%, 0% 100%);
+     padding-top: 3rem !important;
+     transition: transform 0.3s ease;
+ }
+
+ .slanted-card:hover {
+     transform: translateY(-10px);
+ }
+
+ .slanted-card>* {
+     transform: none;
+ }
+
+ .stats-border {
+     border-left: 1px solid rgba(255, 255, 255, 0.3);
+ }
