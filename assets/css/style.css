@@ -40,10 +40,10 @@
  }
 
  .slanted-card {
-     background-color: #f1f9f0;
+     background-color: #E8F5D3;
      border-radius: 1rem 2rem 2rem 2rem;
-     clip-path: polygon(0% 0%, 100% 6%, 100% 100%, 0% 100%);
      padding-top: 3rem !important;
+     clip-path: polygon(0% 0%, 100% 8%, 100% 100%, 0% 100%);
      transition: transform 0.3s ease;
  }
 
@@ -57,4 +57,32 @@
 
  .stats-border {
      border-left: 1px solid rgba(255, 255, 255, 0.3);
+ }
+
+
+ /* Vertical line on the left for tablet/desktop */
+ @media (min-width: 640px) {
+     .stats-border {
+         border-left: 1px solid rgba(255, 255, 255, 0.2);
+     }
+ }
+
+ /* Optional: Subtle bottom border for mobile stats instead of vertical lines */
+ @media (max-width: 639px) {
+     .stats-border:not(:last-child) {
+         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+         padding-bottom: 1.5rem;
+     }
+ }
+
+
+ .swiper-pagination-bullet-active {
+     background: #55b331 !important;
+     opacity: 1;
+ }
+
+ .swiper-pagination-bullet {
+     width: 10px;
+     height: 10px;
+     margin: 0 5px !important;
  }
