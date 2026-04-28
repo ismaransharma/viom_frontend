@@ -14,23 +14,24 @@
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="bg-white py-2 my-4 px-6 md:px-12 container"
+    <nav class="bg-white py-2 px-6 md:px-12"
         style="position: sticky; top: 0; z-index: 999; border-bottom: 1px solid #f0f0f0;">
-        <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between container">
 
             <div class="flex-shrink-0">
                 <a href="#hero">
-                    <img src="assets/images/logo.jpeg" alt="VIOM Cleaning" class="h-17 w-auto">
+                    <img src="assets/images/logo.jpeg" alt="VIOM Cleaning" class="h-20 w-auto">
                 </a>
             </div>
 
             <ul class="hidden lg:flex items-center space-x-10 text-[16px] font-medium text-gray-700">
-                <li><a href="#hero" class="hover:text-[#55b331] transition">Home</a></li>
+                <li><a href="#hero" class="hover:text-[#55b331] transition active">Home</a></li>
                 <li><a href="#services" class="hover:text-[#55b331] transition">Services</a></li>
                 <li><a href="#about-us" class="hover:text-[#55b331] transition">About Us</a></li>
                 <li><a href="#faq" class="hover:text-[#55b331] transition">FAQ</a></li>
@@ -70,50 +71,51 @@
     </nav>
 
     <!-- Hero -->
-    <section id="hero" class="relative bg-white overflow-hidden">
-        <div class="w-full px-0 md:px-6 md:py-4 container">
-            <div
-                class="relative flex flex-col lg:flex-row w-full bg-[#f8f9f4] md:bg-transparent rounded-none md:rounded-[4rem] overflow-hidden">
+    <section id="hero" class="relative bg-white overflow-hidden min-h-screen flex items-stretch">
+        <div class="w-full flex">
+            <div class="relative flex flex-col w-full bg-[#f8f9f4] md:bg-transparent overflow-hidden">
 
-                <div class="relative w-full h-[480px] md:h-[600px] lg:h-[700px]">
+                <div class="relative w-full h-screen">
                     <img src="assets/images/hero.png" alt="VIOM Cleaning Services"
-                        class="w-full h-full object-cover object-[80%_center] md:object-center md:rounded-[4rem]">
-                    <div class="absolute inset-0 bg-black/15 md:hidden pointer-events-none"></div>
+                        class="w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 bg-black/5 pointer-events-none"></div>
                 </div>
 
-                <div
-                    class="relative -mt-32 md:mt-0 md:absolute md:inset-y-0 md:left-0 flex items-center w-full md:w-[560px] lg:w-[660px] px-4 pb-12 md:p-12 z-10">
-                    <div id="heroContent"
-                        class="bg-[#f8f9f4] md:bg-white/45 md:backdrop-blur-xl p-8 md:p-12 rounded-t-[4rem] rounded-b-[3rem] md:rounded-[3.5rem] shadow-2xl border-none md:border border-white/40 ring-0 md:ring-1 ring-black/5 opacity-0">
+                <div class="absolute inset-0 z-10 pointer-events-none">
+                    <div class="max-w-[1440px] mx-auto h-full flex items-center px-6 md:px-12 lg:px-20">
 
-                        <div class="flex items-center gap-2 mb-5 hero-item">
-                            <span class="flex h-2 w-2 rounded-full bg-[#55b331] animate-pulse"></span>
-                            <span class="text-xs font-bold uppercase tracking-[0.22em] text-[#081c3a]/55">
-                                Melbourne, Australia
-                            </span>
+                        <div id="heroContent"
+                            class="pointer-events-auto bg-white/40 backdrop-blur-2xl p-5 md:p-11 rounded-[3rem] md:rounded-[3.5rem] shadow-2xl border border-white/30 opacity-0 w-full md:w-[450px] lg:w-[500px] max-w-lg">
+
+                            <div class="flex items-center gap-2 mb-6 hero-item">
+                                <span class="flex h-2 w-2 rounded-full bg-[#55b331] animate-pulse"></span>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-[#081c3a]/70">
+                                    Melbourne, Australia
+                                </span>
+                            </div>
+
+                            <h1
+                                class="text-[26px] md:text-[30px] font-bold text-[#081c3a] leading-[1.15] mb-6 tracking-tight hero-item">
+                                Residential &<br>
+                                <span class="text-[#55b331]">Commercial</span> Cleaning
+                            </h1>
+
+                            <p
+                                class="text-sm md:text-base leading-relaxed mb-10 hero-item text-[#081c3a]/80 font-medium">
+                                Professional cleaning services for homes and offices across Melbourne.
+                            </p>
+
+                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 hero-item">
+                                <a href="#get-quote"
+                                    class="text-center bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-4 px-8 rounded-full transition-all text-sm shadow-lg shadow-yellow-500/20 active:scale-95">
+                                    Get a Free Quote
+                                </a>
+                                <a href="#services"
+                                    class="text-center bg-white text-[#081c3a] font-bold py-4 px-8 rounded-full border border-gray-100 hover:shadow-md transition-all text-sm active:scale-95">
+                                    Our Services
+                                </a>
+                            </div>
                         </div>
-
-                        <h1
-                            class="text-[32px] md:text-[44px] font-extrabold text-[#081c3a] leading-[1.1] mb-5 tracking-tight hero-item">
-                            Residential &<br class="hidden md:block">
-                            <span class="text-[#55b331]">Commercial</span> Cleaning
-                        </h1>
-
-                        <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-8 hero-item">
-                            Professional cleaning services for homes and offices across Melbourne.
-                        </p>
-
-                        <div class="flex flex-row items-center gap-3 hero-item">
-                            <a href="#get-quote"
-                                class="flex-1 md:flex-none text-center bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-extrabold py-4 px-7 md:px-9 rounded-full transition-all text-sm md:text-base shadow-lg shadow-yellow-500/20 active:scale-95">
-                                Get a Free Quote
-                            </a>
-                            <a href="#services"
-                                class="flex-1 md:flex-none text-center bg-white border-2 border-gray-200 text-[#081c3a] font-bold py-[14px] px-7 md:px-9 rounded-full hover:border-[#55b331] hover:text-[#55b331] transition-all text-sm md:text-base active:scale-95">
-                                Our Services
-                            </a>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -180,10 +182,10 @@
     </section>
 
     <!-- About Us + Why Choose Us -->
-    <section id="about-us" class="relative px-4 sm:px-6 lg:px-[72px] mb-6">
-        <div class="container mx-auto relative z-20">
+    <section id="about-us" class="relative px-0 mb-6 bg-[#f8f9f4]">
+        <div class="relative z-20 container">
             <div
-                class="about-container p-6 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative shadow-sm mx-auto lg:mx-24 rounded-[2.5rem] bg-[#f8f9f4]">
+                class="about-container py-6 md:py-12 lg:py-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative">
 
                 <div class="w-full lg:w-1/2">
                     <div class="flex items-center gap-2 mb-3 about-text opacity-0">
@@ -231,98 +233,6 @@
                 <div class="w-full lg:w-1/2 about-text opacity-0">
                     <img src="assets/images/whoweare.jpg" alt="Our Cleaning Team"
                         class="rounded-[2rem] w-full h-64 md:h-[440px] object-cover shadow-xl">
-                </div>
-            </div>
-        </div>
-
-        <!-- Why Choose Us (green bg) -->
-        <div
-            class="bg-[#55b331] -mt-32 md:-mt-48 pt-48 md:pt-64 pb-20 rounded-[3rem] md:rounded-[4rem] lg:rounded-t-[8rem] relative z-10">
-
-            <img src="assets/images/leaf.png" alt=""
-                class="leaf-anim rotating-leaf absolute left-[5%] top-[15%] w-24 md:w-44 opacity-0 pointer-events-none">
-            <img src="assets/images/leaf.png" alt=""
-                class="leaf-anim rotating-leaf absolute right-[10%] top-[25%] w-20 md:w-32 opacity-0 pointer-events-none">
-
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-14 why-text opacity-0">
-                    <p class="text-white/70 text-xs font-bold uppercase tracking-[0.25em] mb-3">Why Choose VIOM</p>
-                    <h2 class="text-white text-3xl md:text-5xl font-bold leading-tight">
-                        What Sets Us Apart
-                    </h2>
-                </div>
-
-                <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-20 why-text opacity-0">
-                    <div
-                        class="p-7 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm hover:-translate-y-2 transition-transform">
-                        <div
-                            class="bg-white w-13 h-13 rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-gray-100 p-3">
-                            <i class="fa-solid fa-calendar-days text-[#55b331] text-2xl"></i>
-                        </div>
-                        <h5 class="text-base font-bold text-[#081c3a] mb-2 leading-snug">Online Booking</h5>
-                        <p class="text-sm text-gray-600 leading-relaxed">Get a price and book your clean entirely online
-                            in under 2 minutes.</p>
-                    </div>
-                    <div
-                        class="p-7 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm hover:-translate-y-2 transition-transform">
-                        <div
-                            class="bg-white w-13 h-13 rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-gray-100 p-3">
-                            <i class="fa-solid fa-user-shield text-[#55b331] text-2xl"></i>
-                        </div>
-                        <h5 class="text-base font-bold text-[#081c3a] mb-2 leading-snug">Vetted Cleaners</h5>
-                        <p class="text-sm text-gray-600 leading-relaxed">Every cleaner passes a background check and is
-                            fully insured before joining our team.</p>
-                    </div>
-                    <div
-                        class="p-7 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm hover:-translate-y-2 transition-transform">
-                        <div
-                            class="bg-white w-13 h-13 rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-gray-100 p-3">
-                            <i class="fa-solid fa-leaf text-[#55b331] text-2xl"></i>
-                        </div>
-                        <h5 class="text-base font-bold text-[#081c3a] mb-2 leading-snug">Eco-Friendly Products</h5>
-                        <p class="text-sm text-gray-600 leading-relaxed">We use non-toxic, biodegradable cleaning
-                            supplies safe for children and pets.</p>
-                    </div>
-                    <div
-                        class="p-7 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm hover:-translate-y-2 transition-transform">
-                        <div
-                            class="bg-white w-13 h-13 rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-gray-100 p-3">
-                            <i class="fa-solid fa-clock text-[#55b331] text-2xl"></i>
-                        </div>
-                        <h5 class="text-base font-bold text-[#081c3a] mb-2 leading-snug">Flexible Hours</h5>
-                        <p class="text-sm text-gray-600 leading-relaxed">Morning, afternoon, or weekend slots — schedule
-                            around your routine.</p>
-                    </div>
-                </div>
-
-                <div
-                    class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 border-t border-white/10 pt-12 why-text opacity-0">
-                    <div class="stats-border pl-6">
-                        <h3 class="text-white text-4xl font-bold mb-1">10<sup class="text-2xl">+</sup></h3>
-                        <p class="text-white/80 text-sm">years experience</p>
-                    </div>
-                    <div class="stats-border pl-6">
-                        <h3 class="text-white text-4xl font-bold mb-1">200<sup class="text-2xl">+</sup></h3>
-                        <p class="text-white/80 text-sm">homes cleaned last year</p>
-                    </div>
-                    <div class="stats-border pl-6">
-                        <h3 class="text-white text-4xl font-bold mb-1">5k<sup class="text-2xl">+</sup></h3>
-                        <p class="text-white/80 text-sm">hours saved for clients</p>
-                    </div>
-                    <div class="stats-border pl-6">
-                        <h3 class="text-white text-4xl font-bold mb-1">4.9<sup class="text-2xl">/5</sup></h3>
-                        <p class="text-white/80 text-sm">average client rating</p>
-                    </div>
-                </div>
-
-                <div class="flex justify-center -mb-28 why-text opacity-0">
-                    <div class="bg-white p-2 rounded-3xl">
-                        <a href="#howitworks"
-                            class="block bg-[#f1f9f0] border-2 border-[#55b331] text-[#081c3a] text-lg md:text-xl font-bold px-10 py-3 rounded-[2rem] hover:bg-[#55b331] hover:text-white transition-all">
-                            How We Work
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>

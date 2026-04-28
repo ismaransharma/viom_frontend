@@ -21,8 +21,8 @@
     --gray-text: #64748b;
     --border: rgba(0, 0, 0, 0.07);
     --border-light: rgba(255, 255, 255, 0.1);
-    --font-display: 'DM Serif Display', Georgia, serif;
-    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-display: 'ClashGrotesk', sans-serif;
+    --font-body: 'ClashGrotesk', sans-serif;
     --radius-sm: 12px;
     --radius-md: 18px;
     --radius-lg: 24px;
@@ -30,6 +30,10 @@
     --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
     --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
     --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active{
+    color: #55b331;
 }
 
 body {
