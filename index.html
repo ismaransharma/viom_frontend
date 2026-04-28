@@ -4,285 +4,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIOM Navbar</title>
+    <title>VIOM Cleaning Services — Melbourne</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <nav class="bg-white py-4 px-6 md:px-12" style="position: sticky; top: 0; z-index: 999; overflow: hidden;">
+
+    <!-- Navbar -->
+    <nav class="bg-white py-4 px-6 md:px-12" style="position: sticky; top: 0; z-index: 999; border-bottom: 1px solid #f0f0f0;">
         <div class="max-w-[1400px] mx-auto flex items-center justify-between">
 
             <div class="flex-shrink-0">
-                <div class="h-12 w-32 bg-gray-100 flex items-center justify-center text-xs text-gray-400">
-                    <img src="assets/images/logo.jpeg" alt="">
-                </div>
+                <a href="#hero">
+                    <img src="assets/images/logo.jpeg" alt="VIOM Cleaning" class="h-11 w-auto">
+                </a>
             </div>
 
-            <ul class="hidden lg:flex items-center space-x-10 text-[18px] font-normal text-gray-900">
-                <li><a href="#" class="hover:text-green-600 transition active">Home</a></li>
-                <li><a href="#" class="hover:text-green-600 transition">Services</a></li>
-                <li><a href="#" class="hover:text-green-600 transition">About Us</a></li>
-                <li><a href="#" class="hover:text-green-600 transition">Contact Us</a></li>
+            <ul class="hidden lg:flex items-center space-x-10 text-[16px] font-medium text-gray-700">
+                <li><a href="#hero" class="hover:text-[#55b331] transition">Home</a></li>
+                <li><a href="#services" class="hover:text-[#55b331] transition">Services</a></li>
+                <li><a href="#about-us" class="hover:text-[#55b331] transition">About Us</a></li>
+                <li><a href="#faq" class="hover:text-[#55b331] transition">FAQ</a></li>
             </ul>
 
             <div class="hidden md:flex items-center space-x-4">
-                <div class="flex items-center border border-gray-800 rounded-full pl-1 pr-6 py-1 h-12">
-                    <div class="bg-[#222] text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                        <i class="fa fa-phone"></i>
+                <div class="flex items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 h-11">
+                    <div class="bg-[#081c3a] text-white w-9 h-9 rounded-full flex items-center justify-center mr-3">
+                        <i class="fa fa-phone text-xs"></i>
                     </div>
-                    <span class="font-medium text-gray-900">+81 9087367892</span>
+                    <span class="font-semibold text-gray-800 text-sm">+61 8745 145 896</span>
                 </div>
-
-                <a href="#"
-                    class="bg-[#FCD303] hover:bg-yellow-400 text-black font-semibold px-8 py-3 rounded-full h-12 flex items-center transition">
+                <a href="#get-quote"
+                    class="bg-[#FCD303] hover:bg-yellow-400 text-[#081c3a] font-bold px-7 py-2.5 rounded-full h-11 flex items-center transition text-sm">
                     Free Quote
                 </a>
             </div>
 
-            <button id="menu-toggle" class="lg:hidden text-gray-800 text-2xl">
+            <button id="menu-toggle" class="lg:hidden text-gray-700 text-xl">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden mt-4 space-y-4 pb-4 transition-all">
-            <a href="#" class="block text-lg border-b pb-2">Home</a>
-            <a href="#" class="block text-lg border-b pb-2">Services</a>
-            <a href="#" class="block text-lg border-b pb-2">About Us</a>
-            <a href="#" class="block text-lg border-b pb-2">Contact Us</a>
-            <div class="flex flex-col space-y-3 pt-2">
-                <div class="flex items-center text-gray-900 font-medium">
-                    <i class="fa fa-phone mr-3 text-green-600"></i> +81 9087367892
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 space-y-3 pb-4 border-t border-gray-100 pt-4">
+            <a href="#hero" class="block text-base font-medium text-gray-700 py-1">Home</a>
+            <a href="#services" class="block text-base font-medium text-gray-700 py-1">Services</a>
+            <a href="#about-us" class="block text-base font-medium text-gray-700 py-1">About Us</a>
+            <a href="#faq" class="block text-base font-medium text-gray-700 py-1">FAQ</a>
+            <div class="flex flex-col space-y-3 pt-3 border-t border-gray-100">
+                <div class="flex items-center text-gray-700 font-medium text-sm">
+                    <i class="fa fa-phone mr-3 text-[#55b331] text-xs"></i> +61 8745 145 896
                 </div>
-                <a href="#" class="bg-[#FCD303] text-center py-3 rounded-full font-bold">Free Quote</a>
+                <a href="#get-quote" class="bg-[#FCD303] text-center py-3 rounded-full font-bold text-sm text-[#081c3a]">Free Quote</a>
             </div>
         </div>
     </nav>
 
+    <!-- Hero -->
     <section id="hero" class="relative bg-white overflow-hidden">
         <div class="container mx-auto px-0 md:px-6 md:py-4">
-            <div
-                class="relative flex flex-col lg:flex-row w-full bg-[#f8f9f4] md:bg-transparent rounded-none md:rounded-[4rem] overflow-hidden">
+            <div class="relative flex flex-col lg:flex-row w-full bg-[#f8f9f4] md:bg-transparent rounded-none md:rounded-[4rem] overflow-hidden">
 
                 <div class="relative w-full h-[480px] md:h-[600px] lg:h-[700px]">
                     <img src="assets/images/hero-2.jpg" alt="VIOM Cleaning Services"
                         class="w-full h-full object-cover object-[80%_center] md:object-center md:rounded-[4rem]">
-
-                    <div class="absolute inset-0 bg-black/10 md:hidden pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-black/15 md:hidden pointer-events-none"></div>
                 </div>
 
-                <div
-                    class="relative -mt-32 md:mt-0 md:absolute md:inset-y-0 md:left-0 flex items-center w-full md:w-[600px] lg:w-[720px] px-4 pb-12 md:p-12 z-10">
-
+                <div class="relative -mt-32 md:mt-0 md:absolute md:inset-y-0 md:left-0 flex items-center w-full md:w-[560px] lg:w-[660px] px-4 pb-12 md:p-12 z-10">
                     <div id="heroContent"
-                        class="bg-[#f8f9f4] md:bg-white/40 md:backdrop-blur-xl p-8 md:p-14 rounded-t-[4rem] rounded-b-[3rem] md:rounded-[3.5rem] shadow-2xl md:shadow-2xl border-none md:border border-white/40 ring-0 md:ring-1 ring-black/5 opacity-0">
+                        class="bg-[#f8f9f4] md:bg-white/45 md:backdrop-blur-xl p-8 md:p-12 rounded-t-[4rem] rounded-b-[3rem] md:rounded-[3.5rem] shadow-2xl border-none md:border border-white/40 ring-0 md:ring-1 ring-black/5 opacity-0">
 
-                        <div class="flex items-center gap-2 mb-6 hero-item">
-                            <span class="flex h-2.5 w-2.5 rounded-full bg-[#55b331] animate-pulse"></span>
-                            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#081c3a]/70">
-                                Premium Cleaning • Melbourne
+                        <div class="flex items-center gap-2 mb-5 hero-item">
+                            <span class="flex h-2 w-2 rounded-full bg-[#55b331] animate-pulse"></span>
+                            <span class="text-xs font-bold uppercase tracking-[0.22em] text-[#081c3a]/55">
+                                Melbourne, Australia
                             </span>
                         </div>
 
-                        <h1
-                            class="text-[34px] md:text-[48px] font-extrabold text-[#081c3a] leading-[1.1] mb-6 tracking-tight hero-item">
-                            Sparkly Residential & <br class="hidden md:block">
-                            <span class="text-[#55b331]">Commercial</span> Services
+                        <h1 class="text-[32px] md:text-[44px] font-extrabold text-[#081c3a] leading-[1.1] mb-5 tracking-tight hero-item">
+                            Residential &<br class="hidden md:block">
+                            <span class="text-[#55b331]">Commercial</span> Cleaning
                         </h1>
 
-                        <p class="text-slate-600 text-lg md:text-xl leading-relaxed mb-10 font-medium hero-item">
-                            Stop wasting your precious free time cleaning. Relax while <span
-                                class="text-[#081c3a] font-bold">VIOM</span> makes your home sparkle!
+                        <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-8 hero-item">
+                            Professional cleaning services for homes and offices across Melbourne.
                         </p>
 
-                        <div class="flex flex-row items-center gap-3 md:gap-4 mb-10 hero-item">
-                            <a href="#"
-                                class="flex-1 md:flex-none text-center bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-black py-5 px-8 md:px-10 rounded-full transition-all text-base md:text-lg shadow-xl shadow-yellow-500/20 active:scale-95">
-                                Free Quote
+                        <div class="flex flex-row items-center gap-3 hero-item">
+                            <a href="#get-quote"
+                                class="flex-1 md:flex-none text-center bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-extrabold py-4 px-7 md:px-9 rounded-full transition-all text-sm md:text-base shadow-lg shadow-yellow-500/20 active:scale-95">
+                                Get a Free Quote
                             </a>
-                            <a href="#"
-                                class="flex-1 md:flex-none text-center bg-white border-2 border-[#55b331]/20 text-[#081c3a] font-bold py-[18px] px-8 md:px-10 rounded-full hover:bg-[#55b331] hover:text-white transition-all text-base md:text-lg active:scale-95">
-                                Services
+                            <a href="#services"
+                                class="flex-1 md:flex-none text-center bg-white border-2 border-gray-200 text-[#081c3a] font-bold py-[14px] px-7 md:px-9 rounded-full hover:border-[#55b331] hover:text-[#55b331] transition-all text-sm md:text-base active:scale-95">
+                                Our Services
                             </a>
                         </div>
 
-                        <div
-                            class="flex flex-wrap items-center gap-x-6 gap-y-4 pt-8 border-t border-gray-200 md:border-white/30 hero-item">
-                            <div class="flex items-center gap-2">
-                                <div class="bg-[#55b331] rounded-full p-1 shadow-sm">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
-                                        viewBox="0 0 24 24">
-                                        <path d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
-                                <span class="text-[#081c3a] font-bold text-sm">Professional</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="bg-[#55b331] rounded-full p-1 shadow-sm">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
-                                        viewBox="0 0 24 24">
-                                        <path d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
-                                <span class="text-[#081c3a] font-bold text-sm">Friendly</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="bg-[#55b331] rounded-full p-1 shadow-sm">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
-                                        viewBox="0 0 24 24">
-                                        <path d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
-                                <span class="text-[#081c3a] font-bold text-sm">Convenient</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="howitworks" class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-            <div id="howitworksHeader" class="text-center mb-24 opacity-0">
-                <p class="text-[13px] font-normal text-black-400 uppercase tracking-[0.2em] mb-0">How it works</p>
-                <h2 class="text-[50px] md:text-[50px] font-normal text-[#081c3a] tracking-tight leading-none">Quick and
-                    Easy</h2>
+    <!-- How It Works -->
+    <section id="howitworks" class="py-20 bg-[#f0f7ed]">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div id="howitworksHeader" class="text-center mb-14 opacity-0">
+                <p class="text-xs font-bold text-[#55b331] uppercase tracking-[0.25em] mb-3">How It Works</p>
+                <h2 class="text-[40px] md:text-[50px] font-bold text-[#081c3a] tracking-tight leading-none">3 Simple Steps</h2>
             </div>
 
-            <div
-                class="flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto space-y-12 md:space-y-0">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
-                <div
-                    class="flex flex-col items-center text-center w-full md:w-[320px] group how-it-works-item opacity-0">
-                    <div class="relative">
-                        <div
-                            class="absolute -top-4 -left-1 z-20 -rotate-[10deg] transition-transform duration-500 group-hover:rotate-[5deg]">
-                            <img src="assets/images/green-leaves.svg" class="w-16 h-16" alt="leaves">
+                <div class="how-it-works-item opacity-0 relative bg-white rounded-[2.5rem] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
+                    <span class="absolute top-4 right-6 text-[88px] font-black text-[#55b331]/10 leading-none select-none">01</span>
+                    <div class="relative z-10">
+                        <div class="bg-[#55b331] w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-green-500/20">
+                            <i class="fa-solid fa-calendar-check text-white text-xl"></i>
                         </div>
-                        <div class="how-it-works-circle rounded-full flex items-center justify-center relative">
-                            <div
-                                class="bg-[#55b331] w-[86px] h-[86px] rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-green-900/10">
-                                <i class="fa-solid fa-calendar-check text-white text-4xl"></i>
-                            </div>
-                        </div>
+                        <h4 class="text-xl font-bold text-[#081c3a] mb-3">Book Online</h4>
+                        <p class="text-gray-500 text-[15px] leading-relaxed">Choose your service and date, and get an instant price — no phone call needed.</p>
                     </div>
-                    <h4 class="text-[28px] font-bold text-[#081c3a] mt-4 mb-3">Free Quote</h4>
-                    <p class="text-gray-500 text-[16px] leading-relaxed px-4">Tell us about your home and choose the
-                        date you want.</p>
                 </div>
 
-                <div class="h-full md:h-50 px-4 how-it-works-arrow opacity-0">
-                    <svg class="w-12 h-12 md:w-32 md:h-8 text-[#8cc63f]/60 rotate-90 md:rotate-0" fill="none"
-                        stroke="currentColor" stroke-width="2" viewBox="0 0 100 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h90m0 0l-10-10m10 10l-10 10" />
-                    </svg>
-                </div>
-
-                <div
-                    class="flex flex-col items-center text-center w-full md:w-[320px] group how-it-works-item opacity-0">
-                    <div class="relative">
-                        <div
-                            class="absolute -top-13 left-1/2 -translate-x-1/2 z-20 -rotate-[-30deg] transition-transform duration-500 group-hover:rotate-[50deg]">
-                            <img src="assets/images/green-leaves.svg" class="w-16 h-16" alt="leaves">
+                <div class="how-it-works-item opacity-0 relative bg-[#081c3a] rounded-[2.5rem] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
+                    <span class="absolute top-4 right-6 text-[88px] font-black text-white/10 leading-none select-none">02</span>
+                    <div class="relative z-10">
+                        <div class="bg-white/15 w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-broom text-white text-xl"></i>
                         </div>
-                        <div class="how-it-works-circle rounded-full flex items-center justify-center relative">
-                            <img src="assets/images/window-cleaning.svg" class="w-32 h-32 brand-green-filter"
-                                alt="Clean">
-                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">We Clean</h4>
+                        <p class="text-white/60 text-[15px] leading-relaxed">Our team arrives on time and cleans your space thoroughly.</p>
                     </div>
-                    <h4 class="text-[28px] font-bold text-[#081c3a] mt-4 mb-3">Clean</h4>
-                    <p class="text-gray-500 text-[16px] leading-relaxed px-4">Our seasoned team of full-time cleaners
-                        will transform your home.</p>
                 </div>
 
-                <div class="h-full md:h-50 px-4 how-it-works-arrow opacity-0">
-                    <svg class="w-12 h-12 md:w-32 md:h-8 text-[#8cc63f]/60 rotate-90 md:rotate-0" fill="none"
-                        stroke="currentColor" stroke-width="2" viewBox="0 0 100 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h90m0 0l-10-10m10 10l-10 10" />
-                    </svg>
-                </div>
-
-                <div
-                    class="flex flex-col items-center text-center w-full md:w-[320px] group how-it-works-item opacity-0">
-                    <div class="relative">
-                        <div
-                            class="absolute -top-5 -right-1 z-20 rotate-[45deg] transition-transform duration-500 group-hover:rotate-[65deg]">
-                            <img src="assets/images/green-leaves.svg" class="w-16 h-16" alt="leaves">
+                <div class="how-it-works-item opacity-0 relative bg-white rounded-[2.5rem] p-8 shadow-sm hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
+                    <span class="absolute top-4 right-6 text-[88px] font-black text-[#55b331]/10 leading-none select-none">03</span>
+                    <div class="relative z-10">
+                        <div class="bg-[#55b331] w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-green-500/20">
+                            <i class="fa-solid fa-mug-hot text-white text-xl"></i>
                         </div>
-                        <div class="how-it-works-circle rounded-full flex items-center justify-center relative">
-                            <img src="assets/images/relax.svg" class="w-32 h-32 brand-green-filter" alt="Relax">
-                        </div>
+                        <h4 class="text-xl font-bold text-[#081c3a] mb-3">You Enjoy</h4>
+                        <p class="text-gray-500 text-[15px] leading-relaxed">Come home to a clean space. No prep, no hassle.</p>
                     </div>
-                    <h4 class="text-[28px] font-bold text-[#081c3a] mt-4 mb-3">Relax</h4>
-                    <p class="text-gray-500 text-[16px] leading-relaxed px-4">Sit back and enjoy how amazing your home
-                        or business looks now.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- About Us + Why Choose Us -->
     <section id="about-us" class="relative px-4 sm:px-6 lg:px-[72px] mb-6">
         <div class="container mx-auto relative z-20">
-            <div
-                class="about-container p-6 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 relative shadow-sm mx-auto lg:mx-24 rounded-[2.5rem] bg-[#f8f9f4]">
+            <div class="about-container p-6 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative shadow-sm mx-auto lg:mx-24 rounded-[2.5rem] bg-[#f8f9f4]">
+
                 <div class="w-full lg:w-1/2">
-                    <div class="flex items-center gap-2 mb-2 about-text opacity-0">
-                        <p class="text-[11px] md:text-[13px] font-bold text-gray-500 uppercase tracking-[0.2em]">Who We
-                            Are</p>
+                    <div class="flex items-center gap-2 mb-3 about-text opacity-0">
+                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-[0.25em]">Who We Are</p>
                         <div class="w-8 h-[2px] bg-[#55b331]"></div>
                     </div>
-                    <h2
-                        class="text-3xl md:text-[40px] font-bold text-[#081c3a] leading-tight mb-5 about-text opacity-0">
-                        We Are the Best Option for a Sparkling Home
+                    <h2 class="text-3xl md:text-[38px] font-bold text-[#081c3a] leading-tight mb-4 about-text opacity-0">
+                        Experienced Cleaners.<br>Insured &amp; Background-Checked.
                     </h2>
                     <p class="text-gray-600 text-base md:text-lg mb-8 leading-relaxed about-text opacity-0">
-                        At Clany Eco, our mission is to provide the most convenient platform for connecting you with
-                        exceptional, professional cleaners who deliver outstanding results.
+                        VIOM has been providing residential and commercial cleaning services across Melbourne for over 10 years. Every cleaner on our team is vetted, insured, and trained before their first job.
                     </p>
 
                     <ul class="space-y-4 mb-10 about-text opacity-0">
                         <li class="flex items-start gap-3">
                             <div class="bg-[#55b331] rounded-full p-1 mt-1 shrink-0">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
-                                    viewBox="0 0 24 24">
+                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
                                     <path d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <span class="text-[#081c3a] font-bold text-sm md:text-base">We always keep you up to date on
-                                your cleaning</span>
+                            <span class="text-[#081c3a] font-semibold text-sm md:text-base">10+ years serving Melbourne homes and businesses</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="bg-[#55b331] rounded-full p-1 mt-1 shrink-0">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
-                                    viewBox="0 0 24 24">
+                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24">
                                     <path d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <span class="text-[#081c3a] font-bold text-sm md:text-base">The cleaners treat your home
-                                like their own home</span>
+                            <span class="text-[#081c3a] font-semibold text-sm md:text-base">All cleaners are background-checked and fully insured</span>
                         </li>
                     </ul>
 
-                    <a href="#"
+                    <a href="#get-quote"
                         class="inline-block bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-3 md:py-4 px-10 rounded-full transition-all shadow-md text-sm md:text-base about-text opacity-0">
-                        Learn More
+                        Get a Quote
                     </a>
                 </div>
 
                 <div class="w-full lg:w-1/2 about-text opacity-0">
                     <img src="assets/images/whoweare.jpg" alt="Our Cleaning Team"
-                        class="rounded-[2rem] w-full h-64 md:h-[450px] object-cover shadow-xl">
+                        class="rounded-[2rem] w-full h-64 md:h-[440px] object-cover shadow-xl">
                 </div>
             </div>
         </div>
 
-        <div
-            class="bg-[#55b331] -mt-32 md:-mt-48 pt-48 md:pt-64 pb-20 rounded-[3rem] md:rounded-[4rem] lg:rounded-t-[8rem] relative z-10">
+        <!-- Why Choose Us (green bg) -->
+        <div class="bg-[#55b331] -mt-32 md:-mt-48 pt-48 md:pt-64 pb-20 rounded-[3rem] md:rounded-[4rem] lg:rounded-t-[8rem] relative z-10">
 
             <img src="assets/images/leaf.png" alt=""
                 class="leaf-anim rotating-leaf absolute left-[5%] top-[15%] w-24 md:w-44 opacity-0 pointer-events-none">
@@ -290,160 +218,161 @@
                 class="leaf-anim rotating-leaf absolute right-[10%] top-[25%] w-20 md:w-32 opacity-0 pointer-events-none">
 
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 why-text opacity-0">
-                    <div class="flex justify-center items-center gap-2 mb-4">
-                        <p class="text-white/80 text-xs md:text-sm font-bold uppercase tracking-widest">Why Choose Us
-                        </p>
-                        <div class="w-8 h-[1px] bg-white/40"></div>
-                    </div>
+                <div class="text-center mb-14 why-text opacity-0">
+                    <p class="text-white/70 text-xs font-bold uppercase tracking-[0.25em] mb-3">Why Choose VIOM</p>
                     <h2 class="text-white text-3xl md:text-5xl font-bold leading-tight">
-                        We Are Experienced & We <br class="hidden md:block"> Have Expert Teams
+                        What Sets Us Apart
                     </h2>
                 </div>
 
-                <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-20 why-text opacity-0">
-                    <div
-                        class="p-8 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm group hover:-translate-y-2 transition-transform">
-                        <div
-                            class="bg-white w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-gray-100">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-20 why-text opacity-0">
+                    <div class="p-7 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm hover:-translate-y-2 transition-transform">
+                        <div class="bg-white w-13 h-13 rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-gray-100 p-3">
                             <i class="fa-solid fa-calendar-days text-[#55b331] text-2xl"></i>
                         </div>
-                        <h5 class="text-xl font-bold text-[#081c3a] mb-3 leading-snug">Free Quote & Instant Pricing</h5>
-                        <p class="text-sm font-normal text-gray-600 leading-relaxed">Get instant pricing and get your
-                            free quote cleaning all online.</p>
+                        <h5 class="text-base font-bold text-[#081c3a] mb-2 leading-snug">Online Booking</h5>
+                        <p class="text-sm text-gray-600 leading-relaxed">Get a price and book your clean entirely online in under 2 minutes.</p>
+                    </div>
+                    <div class="p-7 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm hover:-translate-y-2 transition-transform">
+                        <div class="bg-white w-13 h-13 rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-gray-100 p-3">
+                            <i class="fa-solid fa-user-shield text-[#55b331] text-2xl"></i>
+                        </div>
+                        <h5 class="text-base font-bold text-[#081c3a] mb-2 leading-snug">Vetted Cleaners</h5>
+                        <p class="text-sm text-gray-600 leading-relaxed">Every cleaner passes a background check and is fully insured before joining our team.</p>
+                    </div>
+                    <div class="p-7 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm hover:-translate-y-2 transition-transform">
+                        <div class="bg-white w-13 h-13 rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-gray-100 p-3">
+                            <i class="fa-solid fa-leaf text-[#55b331] text-2xl"></i>
+                        </div>
+                        <h5 class="text-base font-bold text-[#081c3a] mb-2 leading-snug">Eco-Friendly Products</h5>
+                        <p class="text-sm text-gray-600 leading-relaxed">We use non-toxic, biodegradable cleaning supplies safe for children and pets.</p>
+                    </div>
+                    <div class="p-7 flex flex-col items-start bg-[#f1f9f0] rounded-[2rem] rounded-tl-none shadow-sm hover:-translate-y-2 transition-transform">
+                        <div class="bg-white w-13 h-13 rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-gray-100 p-3">
+                            <i class="fa-solid fa-clock text-[#55b331] text-2xl"></i>
+                        </div>
+                        <h5 class="text-base font-bold text-[#081c3a] mb-2 leading-snug">Flexible Hours</h5>
+                        <p class="text-sm text-gray-600 leading-relaxed">Morning, afternoon, or weekend slots — schedule around your routine.</p>
                     </div>
                 </div>
 
-                <div
-                    class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 border-t border-white/10 pt-12 why-text opacity-0">
+                <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 border-t border-white/10 pt-12 why-text opacity-0">
                     <div class="stats-border pl-6">
-                        <h3 class="text-white text-4xl font-bold mb-1">15<sup>+</sup></h3>
+                        <h3 class="text-white text-4xl font-bold mb-1">10<sup class="text-2xl">+</sup></h3>
                         <p class="text-white/80 text-sm">years experience</p>
                     </div>
                     <div class="stats-border pl-6">
-                        <h3 class="text-white text-4xl font-bold mb-1">10<sup>+</sup></h3>
+                        <h3 class="text-white text-4xl font-bold mb-1">200<sup class="text-2xl">+</sup></h3>
                         <p class="text-white/80 text-sm">homes cleaned last year</p>
                     </div>
                     <div class="stats-border pl-6">
-                        <h3 class="text-white text-4xl font-bold mb-1">500<sup>+</sup></h3>
-                        <p class="text-white/80 text-sm">saved hours for our clients</p>
+                        <h3 class="text-white text-4xl font-bold mb-1">5k<sup class="text-2xl">+</sup></h3>
+                        <p class="text-white/80 text-sm">hours saved for clients</p>
                     </div>
                     <div class="stats-border pl-6">
-                        <h3 class="text-white text-4xl font-bold mb-1">95<sup>%</sup></h3>
-                        <p class="text-white/80 text-sm">of our clients hire us again</p>
+                        <h3 class="text-white text-4xl font-bold mb-1">4.9<sup class="text-2xl">/5</sup></h3>
+                        <p class="text-white/80 text-sm">average client rating</p>
                     </div>
                 </div>
 
                 <div class="flex justify-center -mb-28 why-text opacity-0">
                     <div class="bg-white p-2 rounded-3xl">
-                        <button
-                            class="bg-[#f1f9f0] border-2 border-[#55b331] text-[#081c3a] text-lg md:text-xl font-bold px-10 py-3 rounded-[2rem] hover:bg-[#55b331] hover:text-white transition-all">
-                            Cleaning Process
-                        </button>
+                        <a href="#howitworks"
+                            class="block bg-[#f1f9f0] border-2 border-[#55b331] text-[#081c3a] text-lg md:text-xl font-bold px-10 py-3 rounded-[2rem] hover:bg-[#55b331] hover:text-white transition-all">
+                            How We Work
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Services -->
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-12">
             <div class="mb-12">
-                <p class="text-[13px] font-medium text-gray-500 uppercase tracking-[0.2em] mb-2">Our Services</p>
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-[0.25em] mb-2">Our Services</p>
                 <h2 class="text-3xl md:text-5xl font-bold text-[#081c3a] leading-tight">
-                    Here’s What We Can <br> Do for You
+                    What We Clean
                 </h2>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                <div
-                    class="service-card opacity-0 group bg-gradient-to-br from-[#fdf020] to-[#e9f7e4] rounded-[3rem] p-4 pb-10 transition-transform hover:-translate-y-2 duration-300 shadow-sm">
+                <div class="service-card opacity-0 group bg-gradient-to-br from-[#fdf020] to-[#e9f7e4] rounded-[3rem] p-4 pb-10 transition-transform hover:-translate-y-2 duration-300 shadow-sm">
                     <div class="relative mb-6 overflow-hidden rounded-[2.5rem]">
-                        <img src="assets/images/services.webp" alt="House Cleaning" class="w-full h-64 object-cover"
-                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);">
-                        <div
-                            class="absolute top-5 left-5 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-md">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&auto=format&fit=crop" alt="House Cleaning"
+                            class="w-full h-64 object-cover" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);">
+                        <div class="absolute top-5 left-5 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-md">
                             <i class="fa-solid fa-house text-[#2da60a] text-xl"></i>
                         </div>
                     </div>
                     <div class="px-4">
-                        <h4 class="text-3xl font-bold text-[#081c3a] mb-8 leading-tight">House <br> Cleaning</h4>
-                        <a href="#"
-                            class="flex items-center justify-between bg-white rounded-full py-3 px-8 group-hover:bg-[#081c3a] group-hover:text-white transition-all duration-300">
-                            <span class="text-sm font-bold">Learn more</span>
-                            <div
-                                class="bg-[#e9f7e4] text-[#2da60a] w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-[#2da60a] group-hover:text-white transition-colors">
+                        <h4 class="text-2xl font-bold text-[#081c3a] mb-8 leading-tight">House<br>Cleaning</h4>
+                        <a href="#get-quote"
+                            class="flex items-center justify-between bg-white rounded-full py-3 px-6 group-hover:bg-[#081c3a] group-hover:text-white transition-all duration-300">
+                            <span class="text-sm font-bold">Book Now</span>
+                            <div class="bg-[#e9f7e4] text-[#2da60a] w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-[#2da60a] group-hover:text-white transition-colors">
                                 <i class="fa-solid fa-chevron-right text-xs"></i>
                             </div>
                         </a>
                     </div>
                 </div>
 
-                <div
-                    class="service-card opacity-0 group bg-gradient-to-br from-[#fdf020] to-[#e9f7e4] rounded-[3rem] p-4 pb-10 transition-transform hover:-translate-y-2 duration-300 shadow-sm">
+                <div class="service-card opacity-0 group bg-gradient-to-br from-[#fdf020] to-[#e9f7e4] rounded-[3rem] p-4 pb-10 transition-transform hover:-translate-y-2 duration-300 shadow-sm">
                     <div class="relative mb-6 overflow-hidden rounded-[2.5rem]">
-                        <img src="assets/images/services.webp" alt="Office Cleaning" class="w-full h-64 object-cover"
-                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);">
-                        <div
-                            class="absolute top-5 left-5 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-md">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop" alt="Office Cleaning"
+                            class="w-full h-64 object-cover" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);">
+                        <div class="absolute top-5 left-5 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-md">
                             <i class="fa-solid fa-building text-[#2da60a] text-xl"></i>
                         </div>
                     </div>
                     <div class="px-4">
-                        <h4 class="text-3xl font-bold text-[#081c3a] mb-8 leading-tight">Office <br> Cleaning</h4>
-                        <a href="#"
-                            class="flex items-center justify-between bg-white rounded-full py-3 px-8 group-hover:bg-[#081c3a] group-hover:text-white transition-all duration-300">
-                            <span class="text-sm font-bold">Learn more</span>
-                            <div
-                                class="bg-[#e9f7e4] text-[#2da60a] w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-[#2da60a] group-hover:text-white transition-colors">
+                        <h4 class="text-2xl font-bold text-[#081c3a] mb-8 leading-tight">Office<br>Cleaning</h4>
+                        <a href="#get-quote"
+                            class="flex items-center justify-between bg-white rounded-full py-3 px-6 group-hover:bg-[#081c3a] group-hover:text-white transition-all duration-300">
+                            <span class="text-sm font-bold">Book Now</span>
+                            <div class="bg-[#e9f7e4] text-[#2da60a] w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-[#2da60a] group-hover:text-white transition-colors">
                                 <i class="fa-solid fa-chevron-right text-xs"></i>
                             </div>
                         </a>
                     </div>
                 </div>
 
-                <div
-                    class="service-card opacity-0 group bg-gradient-to-br from-[#fdf020] to-[#e9f7e4] rounded-[3rem] p-4 pb-10 transition-transform hover:-translate-y-2 duration-300 shadow-sm">
+                <div class="service-card opacity-0 group bg-gradient-to-br from-[#fdf020] to-[#e9f7e4] rounded-[3rem] p-4 pb-10 transition-transform hover:-translate-y-2 duration-300 shadow-sm">
                     <div class="relative mb-6 overflow-hidden rounded-[2.5rem]">
-                        <img src="assets/images/services.webp" alt="Kitchen Cleaning" class="w-full h-64 object-cover"
-                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);">
-                        <div
-                            class="absolute top-5 left-5 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-md">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format&fit=crop" alt="Kitchen Cleaning"
+                            class="w-full h-64 object-cover" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);">
+                        <div class="absolute top-5 left-5 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-md">
                             <i class="fa-solid fa-utensils text-[#2da60a] text-xl"></i>
                         </div>
                     </div>
                     <div class="px-4">
-                        <h4 class="text-3xl font-bold text-[#081c3a] mb-8 leading-tight">Kitchen <br> Cleaning</h4>
-                        <a href="#"
-                            class="flex items-center justify-between bg-white rounded-full py-3 px-8 group-hover:bg-[#081c3a] group-hover:text-white transition-all duration-300">
-                            <span class="text-sm font-bold">Learn more</span>
-                            <div
-                                class="bg-[#e9f7e4] text-[#2da60a] w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-[#2da60a] group-hover:text-white transition-colors">
+                        <h4 class="text-2xl font-bold text-[#081c3a] mb-8 leading-tight">Kitchen<br>Cleaning</h4>
+                        <a href="#get-quote"
+                            class="flex items-center justify-between bg-white rounded-full py-3 px-6 group-hover:bg-[#081c3a] group-hover:text-white transition-all duration-300">
+                            <span class="text-sm font-bold">Book Now</span>
+                            <div class="bg-[#e9f7e4] text-[#2da60a] w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-[#2da60a] group-hover:text-white transition-colors">
                                 <i class="fa-solid fa-chevron-right text-xs"></i>
                             </div>
                         </a>
                     </div>
                 </div>
 
-                <div
-                    class="service-card opacity-0 group bg-gradient-to-br from-[#fdf020] to-[#e9f7e4] rounded-[3rem] p-4 pb-10 transition-transform hover:-translate-y-2 duration-300 shadow-sm">
+                <div class="service-card opacity-0 group bg-gradient-to-br from-[#fdf020] to-[#e9f7e4] rounded-[3rem] p-4 pb-10 transition-transform hover:-translate-y-2 duration-300 shadow-sm">
                     <div class="relative mb-6 overflow-hidden rounded-[2.5rem]">
-                        <img src="assets/images/services.webp" alt="Window Cleaning" class="w-full h-64 object-cover"
-                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);">
-                        <div
-                            class="absolute top-5 left-5 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-md">
+                        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&auto=format&fit=crop" alt="Window Cleaning"
+                            class="w-full h-64 object-cover" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);">
+                        <div class="absolute top-5 left-5 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-md">
                             <i class="fa-solid fa-window-restore text-[#2da60a] text-xl"></i>
                         </div>
                     </div>
                     <div class="px-4">
-                        <h4 class="text-3xl font-bold text-[#081c3a] mb-8 leading-tight">Window <br> Cleaning</h4>
-                        <a href="#"
-                            class="flex items-center justify-between bg-white rounded-full py-3 px-8 group-hover:bg-[#081c3a] group-hover:text-white transition-all duration-300">
-                            <span class="text-sm font-bold">Learn more</span>
-                            <div
-                                class="bg-[#e9f7e4] text-[#2da60a] w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-[#2da60a] group-hover:text-white transition-colors">
+                        <h4 class="text-2xl font-bold text-[#081c3a] mb-8 leading-tight">Window<br>Cleaning</h4>
+                        <a href="#get-quote"
+                            class="flex items-center justify-between bg-white rounded-full py-3 px-6 group-hover:bg-[#081c3a] group-hover:text-white transition-all duration-300">
+                            <span class="text-sm font-bold">Book Now</span>
+                            <div class="bg-[#e9f7e4] text-[#2da60a] w-8 h-8 rounded-full flex items-center justify-center group-hover:bg-[#2da60a] group-hover:text-white transition-colors">
                                 <i class="fa-solid fa-chevron-right text-xs"></i>
                             </div>
                         </a>
@@ -454,220 +383,197 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
     <section id="testimonials" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-12">
             <div class="bg-[#e9f5e1] rounded-[3rem] md:rounded-[5rem] py-16 px-6 md:px-20 relative">
 
                 <div class="text-center mb-12">
-                    <p
-                        class="testi-reveal opacity-0 text-[13px] font-medium text-gray-500 uppercase tracking-[0.2em] mb-3">
-                        Testimonials
-                    </p>
-                    <h2
-                        class="testi-reveal opacity-0 text-3xl md:text-[42px] font-bold text-[#081c3a] leading-tight max-w-3xl mx-auto">
-                        Empowering Thousands of Users and Enterprises
+                    <p class="testi-reveal opacity-0 text-xs font-bold text-gray-500 uppercase tracking-[0.25em] mb-3">Testimonials</p>
+                    <h2 class="testi-reveal opacity-0 text-3xl md:text-[42px] font-bold text-[#081c3a] leading-tight max-w-lg mx-auto">
+                        What Our Clients Say
                     </h2>
                 </div>
 
                 <div class="relative max-w-6xl mx-auto group">
                     <div class="swiper testimonialSwiper pb-12">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide h-auto testi-reveal opacity-0">
-                                <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm h-full flex flex-col">
-                                    <div class="mb-6 text-gray-800"><i class="fa-solid fa-quote-left text-2xl"></i>
-                                    </div>
-                                    <p
-                                        class="text-[#081c3a] text-lg md:text-xl leading-relaxed font-medium mb-10 flex-grow">
-                                        Clany Eco provided an exceptional cleaning experience that truly exceeded my
-                                        expectations.
-                                    </p>
-                                    <div class="flex items-center gap-4">
-                                        <img src="assets/images/testimonials.webp"
-                                            class="w-14 h-14 rounded-full object-cover">
-                                        <div>
-                                            <h5 class="font-bold text-[#081c3a] text-lg">Swostika Sharma</h5>
-                                            <p class="text-sm text-gray-500">Client</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide h-auto testi-reveal opacity-0">
-                                <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm h-full flex flex-col">
-                                    <div class="mb-6 text-gray-800"><i class="fa-solid fa-quote-left text-2xl"></i>
-                                    </div>
-                                    <p
-                                        class="text-[#081c3a] text-lg md:text-xl leading-relaxed font-medium mb-10 flex-grow">
-                                        Clany Eco provided an exceptional cleaning experience that truly exceeded my
-                                        expectations.
-                                    </p>
-                                    <div class="flex items-center gap-4">
-                                        <img src="assets/images/testimonials.webp"
-                                            class="w-14 h-14 rounded-full object-cover">
-                                        <div>
-                                            <h5 class="font-bold text-[#081c3a] text-lg">Aaravi Shrestha</h5>
-                                            <p class="text-sm text-gray-500">Client</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide h-auto testi-reveal opacity-0">
-                                <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm h-full flex flex-col">
-                                    <div class="mb-6 text-gray-800"><i class="fa-solid fa-quote-left text-2xl"></i>
-                                    </div>
-                                    <p
-                                        class="text-[#081c3a] text-lg md:text-xl leading-relaxed font-medium mb-10 flex-grow">
-                                        Clany Eco provided an exceptional cleaning experience that truly exceeded my
-                                        expectations.
-                                    </p>
-                                    <div class="flex items-center gap-4">
-                                        <img src="assets/images/" class="w-14 h-14 rounded-full object-cover">
-                                        <div>
-                                            <h5 class="font-bold text-[#081c3a] text-lg">Binod Bhandari</h5>
-                                            <p class="text-sm text-gray-500">Client</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
+                            <div class="swiper-slide h-auto testi-reveal opacity-0">
+                                <div class="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm h-full flex flex-col">
+                                    <div class="mb-5 text-gray-200"><i class="fa-solid fa-quote-left text-3xl"></i></div>
+                                    <p class="text-[#081c3a] text-lg leading-relaxed mb-8 flex-grow">
+                                        Booked a deep clean before moving out of my apartment. The team was on time, thorough, and the place looked better than expected.
+                                    </p>
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/testimonials.webp" class="w-12 h-12 rounded-full object-cover" alt="Swostika Sharma">
+                                        <div>
+                                            <h5 class="font-bold text-[#081c3a]">Swostika Sharma</h5>
+                                            <p class="text-sm text-gray-500">Residential Client</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide h-auto testi-reveal opacity-0">
+                                <div class="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm h-full flex flex-col">
+                                    <div class="mb-5 text-gray-200"><i class="fa-solid fa-quote-left text-3xl"></i></div>
+                                    <p class="text-[#081c3a] text-lg leading-relaxed mb-8 flex-grow">
+                                        We use VIOM for our office every fortnight. Booking is easy, the cleaners are reliable, and the office is always ready on Monday morning.
+                                    </p>
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/testimonials.webp" class="w-12 h-12 rounded-full object-cover" alt="Aaravi Shrestha">
+                                        <div>
+                                            <h5 class="font-bold text-[#081c3a]">Aaravi Shrestha</h5>
+                                            <p class="text-sm text-gray-500">Commercial Client</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide h-auto testi-reveal opacity-0">
+                                <div class="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-sm h-full flex flex-col">
+                                    <div class="mb-5 text-gray-200"><i class="fa-solid fa-quote-left text-3xl"></i></div>
+                                    <p class="text-[#081c3a] text-lg leading-relaxed mb-8 flex-grow">
+                                        Requested a kitchen and bathroom clean. The work was thorough, the pricing was clear upfront, and scheduling was simple. Will book again.
+                                    </p>
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/testimonials.webp" class="w-12 h-12 rounded-full object-cover" alt="Binod Bhandari">
+                                        <div>
+                                            <h5 class="font-bold text-[#081c3a]">Binod Bhandari</h5>
+                                            <p class="text-sm text-gray-500">Residential Client</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                         <div class="swiper-pagination !relative mt-8"></div>
                     </div>
 
-                    <div
-                        class="swiper-button-prev !hidden md:!flex !left-[-60px] !bg-white !w-12 !h-12 !rounded-full !shadow-lg !text-gray-400 hover:!text-[#55b331] after:!text-lg">
-                    </div>
-                    <div
-                        class="swiper-button-next !hidden md:!flex !right-[-60px] !bg-white !w-12 !h-12 !rounded-full !shadow-lg !text-gray-400 hover:!text-[#55b331] after:!text-lg">
-                    </div>
+                    <div class="swiper-button-prev !hidden md:!flex !left-[-60px] !bg-white !w-12 !h-12 !rounded-full !shadow-lg !text-gray-400 hover:!text-[#55b331] after:!text-lg"></div>
+                    <div class="swiper-button-next !hidden md:!flex !right-[-60px] !bg-white !w-12 !h-12 !rounded-full !shadow-lg !text-gray-400 hover:!text-[#55b331] after:!text-lg"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Get Quote -->
     <section id="get-quote" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-[1300px] mx-auto">
 
                 <div class="bg-gradient-to-br from-[#fdf020] to-[#d6f0ac] rounded-[3rem] p-8 md:p-12 shadow-sm">
-                    <div class="mb-10 relative quote-reveal opacity-0">
-                        <p
-                            class="text-[12px] md:text-[13px] font-bold uppercase tracking-widest text-gray-700 mb-2 relative">
-                            Get Your Free Estimate</p>
-                        <span class="absolute -top-3 -left-[-194px] text-[#2da60a] opacity-45 text-sm">/</span>
-                        <span class="absolute -top-3 -left-[-198px] text-[#2da60a] opacity-45">/</span>
+                    <div class="mb-8 quote-reveal opacity-0">
+                        <p class="text-xs font-bold uppercase tracking-[0.25em] text-gray-600 mb-2">Free Estimate</p>
                         <h2 class="text-4xl md:text-5xl font-bold text-[#081c3a]">Get a Quote</h2>
                     </div>
 
-                    <form action="#" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+                    <form action="#" class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div class="quote-reveal opacity-0">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Your name</label>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Your name</label>
                                 <input type="text" placeholder="John Smith"
-                                    class="w-full px-6 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-600 bg-white/70">
+                                    class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-700 bg-white/70">
                             </div>
                             <div class="quote-reveal opacity-0">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                <input type="email" placeholder="e.g. john@youremail.com"
-                                    class="w-full px-6 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-600 bg-white/70">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                                <input type="email" placeholder="john@email.com"
+                                    class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-700 bg-white/70">
                             </div>
                             <div class="quote-reveal opacity-0">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                                <input type="text" placeholder="e.g. (1) 23 4567 891"
-                                    class="w-full px-6 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-600 bg-white/70">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+                                <input type="tel" placeholder="04xx xxx xxx"
+                                    class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-700 bg-white/70">
                             </div>
                             <div class="quote-reveal opacity-0">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Total square footage</label>
-                                <input type="text" placeholder="e.g. 120"
-                                    class="w-full px-6 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-600 bg-white/70">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Square footage</label>
+                                <input type="text" placeholder="e.g. 120 m²"
+                                    class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-700 bg-white/70">
                             </div>
                         </div>
 
                         <div class="relative quote-reveal opacity-0">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Choose a service</label>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Service type</label>
                             <select
-                                class="w-full px-6 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-500 appearance-none bg-white/70 cursor-pointer">
-                                <option>Select</option>
-                                <option>Residential Cleaning</option>
-                                <option>Commercial Cleaning</option>
-                                <option>Deep Cleaning</option>
+                                class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-600 appearance-none bg-white/70 cursor-pointer">
+                                <option>Select a service</option>
+                                <option>House Cleaning</option>
+                                <option>Office Cleaning</option>
+                                <option>Kitchen Cleaning</option>
+                                <option>Window Cleaning</option>
+                                <option>Deep Clean</option>
                             </select>
-                            <div
-                                class="pointer-events-none absolute inset-y-0 right-0 top-10 flex items-center px-6 text-gray-400">
+                            <div class="pointer-events-none absolute inset-y-0 right-0 top-8 flex items-center px-5 text-gray-400">
                                 <i class="fa-solid fa-chevron-down text-sm"></i>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-3 pt-3 quote-reveal opacity-0">
-                            <input type="checkbox" checked
+                        <div class="flex items-start gap-3 quote-reveal opacity-0">
+                            <input type="checkbox" id="consent"
                                 class="mt-1 w-4 h-4 text-[#2da60a] rounded border-gray-300 focus:ring-[#2da60a]">
-                            <p class="text-[13px] text-gray-600 leading-snug">
-                                By submitting this form, you agree to the processing of your personal data...
-                            </p>
+                            <label for="consent" class="text-xs text-gray-600 leading-relaxed cursor-pointer">
+                                I agree to be contacted about my quote request.
+                            </label>
                         </div>
 
                         <div class="quote-reveal opacity-0">
                             <button type="submit"
-                                class="bg-black text-white font-bold py-4 px-12 rounded-full hover:bg-gray-800 transition-colors transform active:scale-95">
+                                class="bg-[#081c3a] text-white font-bold py-4 px-12 rounded-full hover:bg-[#0f2d5e] transition-colors active:scale-95">
                                 Request a Quote
                             </button>
                         </div>
                     </form>
                 </div>
 
-                <div class="flex flex-col gap-8">
-                    <div class="flex-grow min-h-[350px] bg-gray-100 rounded-[3rem] overflow-hidden relative shadow-sm">
-                        <img src="assets/images/quote.jpg" alt="Our Cleaning Experts"
+                <div class="flex flex-col gap-6">
+                    <div class="flex-grow min-h-[320px] bg-gray-100 rounded-[3rem] overflow-hidden relative shadow-sm">
+                        <img src="assets/images/quote.jpg" alt="Cleaning Team"
                             class="w-full h-full object-cover object-center">
                     </div>
 
-                    <div
-                        class="bg-[#f0f7ed] rounded-[3rem] p-10 flex flex-col md:flex-row gap-6 md:items-center relative overflow-hidden shadow-sm">
-                        <div class="flex-grow max-w-[480px] relative z-10">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="bg-[#2da60a] rounded-full p-1.5 shadow-sm">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-2xl font-bold text-[#081c3a]">100% Satisfaction Guarantee</h3>
-                            </div>
-                            <p class="text-gray-600 text-[15px] leading-relaxed">
-                                Your satisfaction is our top priority! We proudly offer a 100% Happiness Guarantee on
-                                all our cleanings.
+                    <div class="bg-[#f0f7ed] rounded-[2.5rem] p-8 flex gap-5 items-start shadow-sm">
+                        <div class="bg-[#2da60a] rounded-full p-2 mt-0.5 shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#081c3a] mb-1">We'll confirm within 24 hours</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                After submitting your request, our team will reach out to confirm your booking details.
                             </p>
                         </div>
-
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
                 <div class="lg:col-span-4 space-y-8 faq-reveal opacity-0">
                     <div>
-                        <p class="text-[13px] font-bold uppercase tracking-widest text-gray-500 mb-2">FAQ</p>
-                        <h2 class="text-4xl md:text-4xl font-normal text-[#081c3a] leading-tight">
-                            Frequently Asked Questions
+                        <p class="text-xs font-bold uppercase tracking-[0.25em] text-gray-400 mb-3">FAQ</p>
+                        <h2 class="text-4xl font-bold text-[#081c3a] leading-tight">
+                            Common Questions
                         </h2>
                     </div>
 
-                    <div class="bg-[#f0f7ed] rounded-[2.5rem] p-8 md:p-10">
-                        <h3 class="text-3xl font-normal text-[#081c3a] leading-snug mb-8">
-                            Looking for the cleaning service in Melbourne? Contact us now!
+                    <div class="bg-[#f0f7ed] rounded-[2.5rem] p-8">
+                        <h3 class="text-xl font-bold text-[#081c3a] leading-snug mb-5">
+                            Have more questions? Call us.
                         </h3>
                         <a href="tel:+618745145896"
-                            class="inline-flex items-center gap-4 bg-white px-6 py-4 rounded-full shadow-sm hover:shadow-md transition-shadow">
-                            <div
-                                class="bg-[#fdf020] w-10 h-10 rounded-full flex items-center justify-center text-[#081c3a]">
-                                <i class="fa-solid fa-phone"></i>
+                            class="inline-flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow">
+                            <div class="bg-[#fdf020] w-9 h-9 rounded-full flex items-center justify-center text-[#081c3a] shrink-0">
+                                <i class="fa-solid fa-phone text-sm"></i>
                             </div>
-                            <span class="font-bold text-[#081c3a] text-lg">+61 8745145896</span>
+                            <span class="font-bold text-[#081c3a] text-sm">+61 8745 145 896</span>
                         </a>
                     </div>
                 </div>
@@ -675,72 +581,57 @@
                 <div class="lg:col-span-8 space-y-4">
 
                     <div class="faq-item group faq-reveal opacity-0">
-                        <button
-                            class="w-full flex items-center justify-between bg-[#f0f7ed] hover:bg-[#e6f0e2] p-6 md:p-8 rounded-[1.5rem] transition-all text-left">
-                            <span class="text-xl md:text-2xl font-bold text-[#081c3a]">Whom do you offer?</span>
-                            <div
-                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-400 group-[.active]:rotate-45 transition-transform">
+                        <button class="w-full flex items-center justify-between bg-[#f0f7ed] hover:bg-[#e6f0e2] p-6 md:p-8 rounded-[1.5rem] transition-all text-left">
+                            <span class="text-lg md:text-xl font-bold text-[#081c3a]">Who do you offer services to?</span>
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-400 group-[.active]:rotate-45 transition-transform shrink-0 ml-4">
                                 <i class="fa-solid fa-plus text-lg"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-8">
-                            <p class="py-6 text-gray-600 leading-relaxed">
-                                We offer professional cleaning services for residential homes, apartments, and
-                                commercial office spaces across Melbourne.
+                            <p class="py-5 text-gray-600 leading-relaxed">
+                                We clean residential homes, apartments, and commercial office spaces throughout Melbourne.
                             </p>
                         </div>
                     </div>
 
                     <div class="faq-item group faq-reveal opacity-0">
-                        <button
-                            class="w-full flex items-center justify-between bg-[#f0f7ed] hover:bg-[#e6f0e2] p-6 md:p-8 rounded-[1.5rem] transition-all text-left">
-                            <span class="text-xl md:text-2xl font-bold text-[#081c3a]">How much does it cost to clean my
-                                home?</span>
-                            <div
-                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-400 group-[.active]:rotate-45 transition-transform">
+                        <button class="w-full flex items-center justify-between bg-[#f0f7ed] hover:bg-[#e6f0e2] p-6 md:p-8 rounded-[1.5rem] transition-all text-left">
+                            <span class="text-lg md:text-xl font-bold text-[#081c3a]">How is pricing determined?</span>
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-400 group-[.active]:rotate-45 transition-transform shrink-0 ml-4">
                                 <i class="fa-solid fa-plus text-lg"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-8">
-                            <p class="py-6 text-gray-600 leading-relaxed">
-                                Pricing depends on the size of your home and the type of cleaning required. Use our "Get
-                                a Quote" form for an instant estimate.
+                            <p class="py-5 text-gray-600 leading-relaxed">
+                                Price depends on the size of your space and the type of clean. Submit the quote form for an estimate — no obligation.
                             </p>
                         </div>
                     </div>
 
                     <div class="faq-item group faq-reveal opacity-0">
-                        <button
-                            class="w-full flex items-center justify-between bg-[#f0f7ed] hover:bg-[#e6f0e2] p-6 md:p-8 rounded-[1.5rem] transition-all text-left">
-                            <span class="text-xl md:text-2xl font-bold text-[#081c3a]">Are the cleaning supplies
-                                included?</span>
-                            <div
-                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-400 group-[.active]:rotate-45 transition-transform">
+                        <button class="w-full flex items-center justify-between bg-[#f0f7ed] hover:bg-[#e6f0e2] p-6 md:p-8 rounded-[1.5rem] transition-all text-left">
+                            <span class="text-lg md:text-xl font-bold text-[#081c3a]">Are cleaning supplies included?</span>
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-400 group-[.active]:rotate-45 transition-transform shrink-0 ml-4">
                                 <i class="fa-solid fa-plus text-lg"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-8">
-                            <p class="py-6 text-gray-600 leading-relaxed">
-                                Yes, we provide all eco-friendly cleaning supplies and equipment needed to complete the
-                                job.
+                            <p class="py-5 text-gray-600 leading-relaxed">
+                                Yes. We bring all eco-friendly cleaning products and equipment. You don't need to provide anything.
                             </p>
                         </div>
                     </div>
 
                     <div class="faq-item group faq-reveal opacity-0">
-                        <button
-                            class="w-full flex items-center justify-between bg-[#f0f7ed] hover:bg-[#e6f0e2] p-6 md:p-8 rounded-[1.5rem] transition-all text-left">
-                            <span class="text-xl md:text-2xl font-bold text-[#081c3a]">What time do you offer cleaning
-                                services?</span>
-                            <div
-                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-400 group-[.active]:rotate-45 transition-transform">
+                        <button class="w-full flex items-center justify-between bg-[#f0f7ed] hover:bg-[#e6f0e2] p-6 md:p-8 rounded-[1.5rem] transition-all text-left">
+                            <span class="text-lg md:text-xl font-bold text-[#081c3a]">What hours are you available?</span>
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-400 group-[.active]:rotate-45 transition-transform shrink-0 ml-4">
                                 <i class="fa-solid fa-plus text-lg"></i>
                             </div>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-8">
-                            <p class="py-6 text-gray-600 leading-relaxed">
-                                We offer flexible scheduling including mornings, afternoons, and weekends to fit your
-                                busy lifestyle.
+                            <p class="py-5 text-gray-600 leading-relaxed">
+                                We offer morning, afternoon, and weekend slots. Available times are shown when you book online.
                             </p>
                         </div>
                     </div>
@@ -750,21 +641,62 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg-[#081c3a] text-white py-16 px-6 md:px-12">
+        <div class="container mx-auto max-w-[1300px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/images/logo.jpeg" alt="VIOM Cleaning" class="h-11 w-auto mb-4 rounded-lg">
+                    <p class="text-white/55 text-sm leading-relaxed max-w-xs">
+                        Professional cleaning services for homes and offices across Melbourne.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-5 text-white/90 text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#hero" class="text-white/55 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-white/55 hover:text-white transition">Services</a></li>
+                        <li><a href="#about-us" class="text-white/55 hover:text-white transition">About Us</a></li>
+                        <li><a href="#faq" class="text-white/55 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#get-quote" class="text-white/55 hover:text-white transition">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-5 text-white/90 text-sm uppercase tracking-wider">Contact</h4>
+                    <ul class="space-y-3 text-sm text-white/55">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-[#55b331] w-4"></i>
+                            <a href="tel:+618745145896" class="hover:text-white transition">+61 8745 145 896</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-[#55b331] w-4"></i>
+                            <a href="mailto:info@viomcleaning.com.au" class="hover:text-white transition">info@viomcleaning.com.au</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-[#55b331] w-4 mt-0.5"></i>
+                            <span>Melbourne, Victoria, Australia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-white/35 text-sm">
+                &copy; 2024 VIOM Cleaning Services. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
+    <!-- FAQ accordion -->
     <script>
         document.querySelectorAll('.faq-item button').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.parentElement;
                 const answer = button.nextElementSibling;
-
-                // Close others (Optional)
                 document.querySelectorAll('.faq-item').forEach(other => {
                     if (other !== item) {
                         other.classList.remove('active');
                         other.querySelector('.faq-answer').style.maxHeight = null;
                     }
                 });
-
                 item.classList.toggle('active');
                 if (item.classList.contains('active')) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
@@ -775,6 +707,7 @@
         });
     </script>
 
+    <!-- Swiper init -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var swiper = new Swiper(".testimonialSwiper", {
@@ -803,10 +736,10 @@
         });
     </script>
 
+    <!-- Mobile menu toggle -->
     <script>
         const btn = document.getElementById('menu-toggle');
         const menu = document.getElementById('mobile-menu');
-
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
@@ -816,167 +749,90 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Script for gsap used in hero section -->
+    <!-- Hero entrance -->
     <script>
         window.addEventListener('load', function () {
             const tl = gsap.timeline();
-
-            // 1. First, make the whole box visible
-            tl.to("#heroContent", {
-                opacity: 1,
-                duration: 0.1
-            });
-
-            // 2. Then, stagger the letters/words (items) inside from the bottom
+            tl.to("#heroContent", { opacity: 1, duration: 0.1 });
             tl.from(".hero-item", {
-                y: 50,           // Start 50px below
-                opacity: 0,      // Start invisible
-                duration: 1,     // Speed of each item
-                stagger: 0.15,   // Time between each item appearing
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.15,
                 ease: "power4.out"
             });
         });
     </script>
 
-    <!-- Script for gsap in how it works section -->
+    <!-- How it works -->
     <script>
         window.addEventListener('load', function () {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: "#howitworks",
-                    start: "top 80%", // Starts when the section is 80% visible
+                    start: "top 80%",
                 }
             });
-
-            // 1. Header comes in first
             tl.fromTo("#howitworksHeader",
                 { y: 30, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
             );
-
-            // 2. Steps and arrows slide in sequentially
-            // We select both items and arrows and animate them in order
             tl.fromTo(".how-it-works-item, .how-it-works-arrow",
-                {
-                    y: 40,
-                    opacity: 0
-                },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    stagger: 0.2, // This creates the "one after another" flow
-                    ease: "back.out(1.7)" // Adds a slight bouncy "pop" effect
-                },
-                "-=0.4" // Starts slightly before the header finishes
+                { y: 40, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" },
+                "-=0.4"
             );
         });
     </script>
 
-
-    <!-- Script for gsap used in about us section with leaf -->
+    <!-- About us + leaf -->
     <script>
-        // Register the plugin
         gsap.registerPlugin(ScrollTrigger);
-
         window.addEventListener('load', function () {
-            // 1. Create the Main Entrance Timeline
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: "#about-us",
                     start: "top 70%",
                 }
             });
-
             tl.fromTo(".about-text",
                 { y: 50, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out" }
             );
-
             tl.fromTo(".why-text",
                 { y: 50, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out" },
                 "-=0.4"
             );
-
-            // LEAF ENTRANCE: Only handle scale and opacity here
             tl.fromTo(".leaf-anim",
                 { scale: 0, opacity: 0 },
-                {
-                    scale: 1,
-                    opacity: 0.2, // Match your original opacity
-                    duration: 1.5,
-                    ease: "elastic.out(1, 0.3)"
-                },
+                { scale: 1, opacity: 0.2, duration: 1.5, ease: "elastic.out(1, 0.3)" },
                 "-=0.8"
             );
-
-            // 2. Separate Scroll-Based Rotation (The "Scrub")
-            // This handles the smooth spinning as you scroll
             gsap.to(".rotating-leaf", {
                 rotation: 360,
                 ease: "none",
                 scrollTrigger: {
-                    trigger: "#about-us", // Use the section ID
+                    trigger: "#about-us",
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: 1.5, // Added a number here (1.5) to make the spin "catch up" smoothly
+                    scrub: 1.5,
                 }
             });
         });
     </script>
 
-    <!-- Script for gsap for services section -->
-    <script>
-        window.addEventListener('load', function () {
-            // We only animate the service cards
-            gsap.fromTo(".service-card",
-                {
-                    y: 60,
-                    opacity: 0
-                },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.2, // This makes them come one by one
-                    ease: "power4.out",
-                    scrollTrigger: {
-                        trigger: "#services",
-                        start: "top 75%", // Starts when the section enters the view
-                    }
-                }
-            );
-        });
-    </script>
-
-    <!-- Script for gsap for testimonials section -->
+    <!-- Services + testimonials -->
     <script>
         window.addEventListener('load', function () {
             gsap.registerPlugin(ScrollTrigger);
-
-            // Animation for Services or Testimonials
             gsap.fromTo(".service-card, .testi-reveal",
+                { y: 60, opacity: 0, scale: 0.95 },
                 {
-                    y: 60,
-                    opacity: 0,
-                    scale: 0.95
-                },
-                {
-                    y: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 1,
-                    stagger: 0.15,
-                    ease: "expo.out",
-                    scrollTrigger: {
-                        trigger: "#services", // or #testimonials
-                        start: "top 80%",
-                    },
-                    // CHANGE THIS LINE:
+                    y: 0, opacity: 1, scale: 1,
+                    duration: 1, stagger: 0.15, ease: "expo.out",
+                    scrollTrigger: { trigger: "#services", start: "top 80%" },
                     onComplete: function () {
-                        // Only clear the transform so your hover effects work, 
-                        // but keep the opacity: 1!
                         gsap.set(".service-card, .testi-reveal", { clearProps: "transform" });
                     }
                 }
@@ -984,29 +840,17 @@
         });
     </script>
 
-    <!-- Script for gsap used in quote section -->
+    <!-- Quote form -->
     <script>
         window.addEventListener('load', function () {
             if (typeof gsap !== 'undefined') {
                 gsap.registerPlugin(ScrollTrigger);
-
                 gsap.fromTo(".quote-reveal",
+                    { y: 60, opacity: 0 },
                     {
-                        y: 60,
-                        opacity: 0
-                    },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 1.2,
-                        stagger: 0.1, // Smooth sequence for all fields
-                        ease: "power4.out",
-                        scrollTrigger: {
-                            trigger: "#get-quote",
-                            start: "top 80%",
-                        },
+                        y: 0, opacity: 1, duration: 1.2, stagger: 0.1, ease: "power4.out",
+                        scrollTrigger: { trigger: "#get-quote", start: "top 80%" },
                         onComplete: function () {
-                            // Keeps fields visible and allows interaction
                             gsap.set(".quote-reveal", { clearProps: "transform" });
                         }
                     }
@@ -1015,30 +859,17 @@
         });
     </script>
 
-    <!-- Script for gsap used in faq section -->
+    <!-- FAQ -->
     <script>
         window.addEventListener('load', function () {
             if (typeof gsap !== 'undefined') {
                 gsap.registerPlugin(ScrollTrigger);
-
                 gsap.fromTo(".faq-reveal",
+                    { y: 70, opacity: 0 },
                     {
-                        y: 70,
-                        opacity: 0
-                    },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 1.2,
-                        stagger: 0.15,
-                        ease: "power4.out",
-                        scrollTrigger: {
-                            trigger: "#faq",
-                            start: "top 85%",
-                        },
+                        y: 0, opacity: 1, duration: 1.2, stagger: 0.15, ease: "power4.out",
+                        scrollTrigger: { trigger: "#faq", start: "top 85%" },
                         onComplete: function () {
-                            // Crucial: Only clear transforms so visibility and 
-                            // accordion transitions remain functional.
                             gsap.set(".faq-reveal", { clearProps: "transform" });
                         }
                     }
