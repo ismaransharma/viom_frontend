@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Cleaning — VIOM Facilities Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-white text-[#0f172a]">
+
+    <!-- Top Bar -->
+    <div class="bg-[#0d2257] text-white text-xs py-2 px-4 hidden md:block">
+        <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-[#f5c518]"></i>
+                    Serving Melbourne &amp; Brisbane
+                </span>
+                <span class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-clock text-[#f5c518]"></i>
+                    Mon – Sat: 7:00am – 6:00pm
+                </span>
+            </div>
+            <div class="flex items-center gap-5">
+                <a href="mailto:info@viomfs.com.au" class="flex items-center gap-1.5 hover:text-[#f5c518] transition">
+                    <i class="fa-solid fa-envelope"></i> info@viomfs.com.au
+                </a>
+                <a href="tel:+61874514589" class="flex items-center gap-1.5 hover:text-[#f5c518] transition">
+                    <i class="fa-solid fa-phone"></i> +61 8745 145 896
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex-shrink-0">
+                <img src="assets/images/logo.jpeg" alt="VIOM Facilities Services" class="h-12 w-auto">
+            </a>
+            <ul class="hidden lg:flex items-center gap-8 text-sm font-medium text-[#334155]">
+                <li><a href="index.html" class="hover:text-[#1a52c9] transition">Home</a></li>
+                <li><a href="index.html#services" class="hover:text-[#1a52c9] transition">Services</a></li>
+                <li><a href="index.html#about" class="hover:text-[#1a52c9] transition">About</a></li>
+                <li><a href="index.html#areas" class="hover:text-[#1a52c9] transition">Service Areas</a></li>
+                <li><a href="index.html#faq" class="hover:text-[#1a52c9] transition">FAQ</a></li>
+                <li><a href="index.html#contact" class="hover:text-[#1a52c9] transition">Contact</a></li>
+            </ul>
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="tel:+61874514589"
+                   class="flex items-center gap-2 text-sm font-semibold text-[#1a52c9] border border-[#1a52c9]/20 rounded-lg px-4 py-2.5 hover:bg-[#1a52c9]/5 transition">
+                    <i class="fa-solid fa-phone text-xs"></i> +61 8745 145 896
+                </a>
+                <a href="index.html#get-quote"
+                   class="bg-[#f5c518] hover:bg-yellow-400 text-[#0f172a] font-bold text-sm px-5 py-2.5 rounded-lg transition">
+                    Get a Free Quote
+                </a>
+            </div>
+            <button id="menu-btn" class="lg:hidden text-[#334155] p-2 rounded-lg hover:bg-gray-100 transition">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 pb-4">
+            <ul class="space-y-1 pt-3">
+                <li><a href="index.html" class="block py-2 px-3 text-sm font-medium text-[#334155] hover:text-[#1a52c9] hover:bg-blue-50 rounded-lg transition">Home</a></li>
+                <li><a href="index.html#services" class="block py-2 px-3 text-sm font-medium text-[#334155] hover:text-[#1a52c9] hover:bg-blue-50 rounded-lg transition">Services</a></li>
+                <li><a href="index.html#about" class="block py-2 px-3 text-sm font-medium text-[#334155] hover:text-[#1a52c9] hover:bg-blue-50 rounded-lg transition">About</a></li>
+                <li><a href="index.html#areas" class="block py-2 px-3 text-sm font-medium text-[#334155] hover:text-[#1a52c9] hover:bg-blue-50 rounded-lg transition">Service Areas</a></li>
+                <li><a href="index.html#faq" class="block py-2 px-3 text-sm font-medium text-[#334155] hover:text-[#1a52c9] hover:bg-blue-50 rounded-lg transition">FAQ</a></li>
+                <li><a href="index.html#contact" class="block py-2 px-3 text-sm font-medium text-[#334155] hover:text-[#1a52c9] hover:bg-blue-50 rounded-lg transition">Contact</a></li>
+            </ul>
+            <div class="flex flex-col gap-3 pt-3 border-t border-gray-100 mt-3">
+                <a href="tel:+61874514589" class="flex items-center gap-2 text-sm font-semibold text-[#1a52c9]">
+                    <i class="fa-solid fa-phone text-xs"></i> +61 8745 145 896
+                </a>
+                <a href="index.html#get-quote" class="bg-[#f5c518] text-center py-2.5 rounded-lg font-bold text-sm text-[#0f172a]">Get a Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-[#f8fafc] py-14 md:py-20">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+
+            <div class="mb-8 flex items-center gap-2 text-sm">
+                <a href="index.html" class="text-gray-400 hover:text-[#1a52c9] transition">Home</a>
+                <span class="text-gray-300">/</span>
+                <a href="index.html#services" class="text-gray-400 hover:text-[#1a52c9] transition">Services</a>
+                <span class="text-gray-300">/</span>
+                <span class="text-[#0d2257] font-semibold">House Cleaning</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="flex items-center gap-2 mb-5">
+                        <div class="bg-[#3cb528] w-8 h-8 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-house text-white text-xs"></i>
+                        </div>
+                        <span class="text-sm font-bold text-[#3cb528] uppercase tracking-widest">House Cleaning</span>
+                    </div>
+                    <h1 class="text-[36px] md:text-[48px] font-extrabold text-[#0d2257] leading-[1.15] mb-5 tracking-tight">
+                        A Consistent Clean,<br>Every Visit.
+                    </h1>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        We clean all living areas, bedrooms, bathrooms, and kitchens. Whether you need a regular weekly clean or a one-off visit, our team follows the same checklist every time.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="index.html#get-quote"
+                            class="bg-[#f5c518] hover:bg-yellow-400 text-[#0f172a] font-bold py-3 px-8 rounded-lg transition text-sm">
+                            Get a Free Quote
+                        </a>
+                        <a href="tel:+61874514589"
+                            class="border border-gray-300 hover:border-[#1a52c9] text-[#0d2257] font-semibold py-3 px-8 rounded-lg transition text-sm">
+                            Call Us
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000&auto=format&fit=crop"
+                        alt="House Cleaning" class="w-full h-[380px] md:h-[440px] object-cover rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="py-16 bg-white">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+            <div class="mb-10">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-[0.25em] mb-2">What's Included</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#0d2257]">Every room, every time.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <div class="bg-[#f8fafc] rounded-2xl p-7">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="bg-[#3cb528] w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-couch text-white text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-[#0d2257]">Living Areas</h3>
+                    </div>
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Dust all surfaces and shelving
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Vacuum upholstered furniture
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Vacuum and mop floors
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Clean mirrors and glass
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Wipe skirting boards
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#f8fafc] rounded-2xl p-7">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="bg-[#3cb528] w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-bed text-white text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-[#0d2257]">Bedrooms</h3>
+                    </div>
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Make beds and straighten linen
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Dust furniture and surfaces
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Vacuum floors and rugs
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Wipe windowsills
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Empty and reline bins
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#f8fafc] rounded-2xl p-7">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="bg-[#3cb528] w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-shower text-white text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-[#0d2257]">Bathrooms</h3>
+                    </div>
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Scrub and disinfect toilet
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Clean sink and tapware
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Scrub shower and/or bath
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Wipe mirrors and surfaces
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Mop floor
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#f8fafc] rounded-2xl p-7">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="bg-[#3cb528] w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-utensils text-white text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-[#0d2257]">Kitchen</h3>
+                    </div>
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Wipe all benchtops
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Clean stovetop and drip trays
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Wipe appliance exteriors
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Clean sink and tapware
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Mop floor
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#f8fafc] rounded-2xl p-7">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="bg-[#3cb528] w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-house-circle-check text-white text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-[#0d2257]">Throughout</h3>
+                    </div>
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Empty and reline all bins
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Wipe light switches and door handles
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Dust ceiling fans and light fittings
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-gray-600">
+                            <i class="fa-solid fa-check text-[#3cb528] mt-0.5 text-xs shrink-0"></i>
+                            Wipe internal window glass
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#0d2257] rounded-2xl p-7 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-3">Need a deeper clean?</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6">
+                            Ask about our end-of-lease and deep clean options — including inside oven, inside fridge, and rangehood cleaning.
+                        </p>
+                    </div>
+                    <a href="index.html#get-quote"
+                        class="bg-[#f5c518] hover:bg-yellow-400 text-[#0f172a] font-bold py-2.5 px-6 rounded-lg transition text-sm inline-block text-center">
+                        Get a Quote
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Highlights -->
+    <section class="py-14 bg-[#f8fafc]">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                <div class="bg-white rounded-xl p-6 flex gap-4 items-start shadow-sm border border-gray-100">
+                    <div class="bg-[#3cb528] w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-leaf text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-[#0d2257] mb-1">Eco-Friendly Products</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">All cleaning products are non-toxic and biodegradable. Safe for children and pets.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 flex gap-4 items-start shadow-sm border border-gray-100">
+                    <div class="bg-[#3cb528] w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-box-open text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-[#0d2257] mb-1">Everything Supplied</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">We bring all products and equipment. You don't need to provide anything.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 flex gap-4 items-start shadow-sm border border-gray-100">
+                    <div class="bg-[#3cb528] w-11 h-11 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-rotate text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-[#0d2257] mb-1">Flexible Frequency</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Book weekly, fortnightly, monthly, or as a one-off clean — whatever suits you.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-[#0d2257]">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Ready to book?</h2>
+                    <p class="text-white/60 text-base">Get a free quote online — takes under 2 minutes.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+                    <a href="index.html#get-quote"
+                        class="bg-[#f5c518] hover:bg-yellow-400 text-[#0f172a] font-bold py-3.5 px-9 rounded-lg transition text-base text-center">
+                        Get a Free Quote
+                    </a>
+                    <a href="tel:+61874514589"
+                        class="border border-white/20 hover:border-white/50 text-white font-semibold py-3.5 px-9 rounded-lg transition text-base text-center">
+                        +61 8745 145 896
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#060f20] text-white py-14 px-4 md:px-6">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-10">
+                <div>
+                    <img src="assets/images/logo.jpeg" alt="VIOM Facilities Services" class="h-12 w-auto mb-4 rounded-lg">
+                    <p class="text-white/55 text-sm leading-relaxed max-w-xs">
+                        Professional cleaning services for homes and businesses across Melbourne and Brisbane.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-5 text-white/90 text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="text-white/55 hover:text-white transition">Home</a></li>
+                        <li><a href="index.html#services" class="text-white/55 hover:text-white transition">Services</a></li>
+                        <li><a href="index.html#about" class="text-white/55 hover:text-white transition">About Us</a></li>
+                        <li><a href="index.html#faq" class="text-white/55 hover:text-white transition">FAQ</a></li>
+                        <li><a href="index.html#get-quote" class="text-white/55 hover:text-white transition">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-5 text-white/90 text-sm uppercase tracking-wider">Contact</h4>
+                    <ul class="space-y-3 text-sm text-white/55">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-[#3cb528] w-4"></i>
+                            <a href="tel:+61874514589" class="hover:text-white transition">+61 8745 145 896</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-[#3cb528] w-4"></i>
+                            <a href="mailto:info@viomfs.com.au" class="hover:text-white transition">info@viomfs.com.au</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-[#3cb528] w-4 mt-0.5"></i>
+                            <span>Melbourne &amp; Brisbane, Australia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-white/35 text-sm">
+                &copy; 2025 VIOM Facilities Services. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var btn = document.getElementById('menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', function () { menu.classList.toggle('hidden'); });
+    </script>
+
+</body>
+</html>
