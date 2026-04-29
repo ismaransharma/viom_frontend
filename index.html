@@ -25,6 +25,310 @@
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
+
+    <style>
+        /* ════════════════════════════════════════════════════
+           GET A QUOTE — matches style.css design system
+        ════════════════════════════════════════════════════ */
+
+        .quote-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .quote-header {
+            text-align: center;
+            max-width: 540px;
+            margin: 0 auto 60px;
+        }
+
+        .quote-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .quote-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Form card */
+        .quote-form-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 44px 48px;
+            box-shadow: 0 2px 24px rgba(8, 28, 58, 0.05);
+        }
+
+        @media (max-width: 640px) {
+            .quote-form-card {
+                padding: 28px 22px;
+            }
+        }
+
+        .quote-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .quote-fields-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 640px) {
+            .quote-fields-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .quote-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .quote-field--full {
+            grid-column: 1 / -1;
+        }
+
+        .quote-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            font-family: var(--font-body);
+        }
+
+        .quote-input {
+            width: 100%;
+            padding: 13px 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 14.5px;
+            color: var(--navy);
+            background: var(--gray-50);
+            font-family: var(--font-body);
+            outline: none;
+            transition: border-color var(--transition), box-shadow var(--transition);
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .quote-input::placeholder {
+            color: #aab4c0;
+        }
+
+        .quote-input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(85, 179, 49, 0.12);
+            background: var(--white);
+        }
+
+        .quote-select-wrap {
+            position: relative;
+        }
+
+        .quote-select {
+            cursor: pointer;
+            padding-right: 44px;
+        }
+
+        .quote-select-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 11px;
+            color: var(--gray-text);
+            pointer-events: none;
+        }
+
+        .quote-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .quote-checkbox {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            accent-color: var(--green);
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .quote-consent-label {
+            font-size: 13px;
+            color: var(--gray-text);
+            line-height: 1.6;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        .quote-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--navy);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            font-weight: 700;
+            padding: 15px 36px;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background var(--transition), transform 0.15s;
+            align-self: flex-start;
+        }
+
+        .quote-submit:hover {
+            background: var(--green);
+        }
+
+        .quote-submit:active {
+            transform: scale(0.97);
+        }
+
+        .quote-submit i {
+            font-size: 12px;
+            transition: transform var(--transition);
+        }
+
+        .quote-submit:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Side panel */
+        .quote-side {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .quote-image-wrap {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 280px;
+            border: 1px solid var(--border);
+        }
+
+        .quote-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .quote-image-badge {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .quote-image-badge__icon {
+            width: 36px;
+            height: 36px;
+            background: var(--green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .quote-image-badge__title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 2px;
+            font-family: var(--font-body);
+        }
+
+        .quote-image-badge__sub {
+            font-size: 11.5px;
+            color: var(--gray-text);
+            margin: 0;
+            font-family: var(--font-body);
+        }
+
+        .quote-trust-list {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px 26px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quote-trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quote-trust-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .quote-trust-item:first-child {
+            padding-top: 0;
+        }
+
+        .quote-trust-icon {
+            width: 34px;
+            height: 34px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green);
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .quote-trust-title {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 0 0 2px;
+            font-family: var(--font-body);
+        }
+
+        .quote-trust-sub {
+            font-size: 12.5px;
+            color: var(--gray-text);
+            margin: 0;
+            line-height: 1.5;
+            font-family: var(--font-body);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -474,92 +778,108 @@
 
 
     <!-- Get Quote -->
-    <section id="get-quote" class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-[1300px] mx-auto">
+    <section id="get-quote" class="quote-section">
+        <div class="container">
 
-                <div class="bg-gradient-to-br from-[#fdf020] to-[#d6f0ac] rounded-[3rem] p-8 md:p-12 shadow-sm">
-                    <div class="mb-8 quote-reveal opacity-0">
-                        <p class="text-xs font-bold uppercase tracking-[0.25em] text-gray-600 mb-2">Free Estimate</p>
-                        <h2 class="text-4xl md:text-5xl font-bold text-[#081c3a]">Get a Quote</h2>
-                    </div>
+            <div class="quote-header quote-reveal">
+                <p class="eyebrow">Free Estimate</p>
+                <h2 class="display-heading">Get a <em>Quote</em></h2>
+                <p class="section-subtext">No hidden fees. We'll confirm within 24 hours.</p>
+            </div>
 
-                    <form action="#" class="space-y-5">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            <div class="quote-reveal opacity-0">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Your name</label>
-                                <input type="text" placeholder="John Smith"
-                                    class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-700 bg-white/70">
+            <div class="quote-grid">
+
+                <!-- Form card -->
+                <div class="quote-form-card quote-reveal">
+                    <form action="#" class="quote-form">
+
+                        <div class="quote-fields-grid">
+                            <div class="quote-field">
+                                <label class="quote-label">Your name</label>
+                                <input type="text" placeholder="John Smith" class="quote-input">
                             </div>
-                            <div class="quote-reveal opacity-0">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                                <input type="email" placeholder="john@email.com"
-                                    class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-700 bg-white/70">
+                            <div class="quote-field">
+                                <label class="quote-label">Email</label>
+                                <input type="email" placeholder="john@email.com" class="quote-input">
                             </div>
-                            <div class="quote-reveal opacity-0">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
-                                <input type="tel" placeholder="04xx xxx xxx"
-                                    class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-700 bg-white/70">
+                            <div class="quote-field">
+                                <label class="quote-label">Phone</label>
+                                <input type="tel" placeholder="04xx xxx xxx" class="quote-input">
                             </div>
-                            <div class="quote-reveal opacity-0">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Square footage</label>
-                                <input type="text" placeholder="e.g. 120 m²"
-                                    class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-700 bg-white/70">
+                            <div class="quote-field">
+                                <label class="quote-label">Property size</label>
+                                <input type="text" placeholder="e.g. 120 m²" class="quote-input">
                             </div>
                         </div>
 
-                        <div class="relative quote-reveal opacity-0">
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Service type</label>
-                            <select
-                                class="w-full px-5 py-4 rounded-2xl border-none shadow-inner focus:ring-2 focus:ring-[#2da60a] outline-none text-gray-600 appearance-none bg-white/70 cursor-pointer">
-                                <option>Select a service</option>
-                                <option>House Cleaning</option>
-                                <option>Office Cleaning</option>
-                                <option>Kitchen Cleaning</option>
-                                <option>Window Cleaning</option>
-                                <option>Deep Clean</option>
-                            </select>
-                            <div
-                                class="pointer-events-none absolute inset-y-0 right-0 top-8 flex items-center px-5 text-gray-400">
-                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                        <div class="quote-field quote-field--full">
+                            <label class="quote-label">Service type</label>
+                            <div class="quote-select-wrap">
+                                <select class="quote-input quote-select">
+                                    <option value="">Select a service</option>
+                                    <option>House Cleaning</option>
+                                    <option>Office Cleaning</option>
+                                    <option>Kitchen Cleaning</option>
+                                    <option>Window Cleaning</option>
+                                    <option>Deep Clean</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down quote-select-icon"></i>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-3 quote-reveal opacity-0">
-                            <input type="checkbox" id="consent"
-                                class="mt-1 w-4 h-4 text-[#2da60a] rounded border-gray-300 focus:ring-[#2da60a]">
-                            <label for="consent" class="text-xs text-gray-600 leading-relaxed cursor-pointer">
+                        <div class="quote-consent">
+                            <input type="checkbox" id="consent" class="quote-checkbox">
+                            <label for="consent" class="quote-consent-label">
                                 I agree to be contacted about my quote request.
                             </label>
                         </div>
 
-                        <div class="quote-reveal opacity-0">
-                            <button type="submit"
-                                class="bg-[#081c3a] text-white font-bold py-4 px-12 rounded-full hover:bg-[#0f2d5e] transition-colors active:scale-95">
-                                Request a Quote
-                            </button>
-                        </div>
+                        <button type="submit" class="quote-submit">
+                            Request a Quote
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
                     </form>
                 </div>
 
-                <div class="flex flex-col gap-6">
-                    <div class="flex-grow min-h-[320px] bg-gray-100 rounded-[3rem] overflow-hidden relative shadow-sm">
-                        <img src="assets/images/quote.jpg" alt="Cleaning Team"
-                            class="w-full h-full object-cover object-center">
-                    </div>
-                    <div class="bg-[#f0f7ed] rounded-[2.5rem] p-8 flex gap-5 items-start shadow-sm">
-                        <div class="bg-[#2da60a] rounded-full p-2 mt-0.5 shrink-0">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-[#081c3a] mb-1">We'll confirm within 24 hours</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">After submitting your request, our team
-                                will reach out to confirm your booking details.</p>
+                <!-- Side panel -->
+                <div class="quote-side quote-reveal">
+
+                    <div class="quote-image-wrap">
+                        <img src="assets/images/quote.jpg" alt="VIOM Cleaning Team" class="quote-image">
+                        <div class="quote-image-badge">
+                            <div class="quote-image-badge__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <p class="quote-image-badge__title">Fully Insured</p>
+                                <p class="quote-image-badge__sub">Every job, every time</p>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="quote-trust-list">
+                        <div class="quote-trust-item">
+                            <div class="quote-trust-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <p class="quote-trust-title">Response within 24 hours</p>
+                                <p class="quote-trust-sub">We confirm every booking personally.</p>
+                            </div>
+                        </div>
+                        <div class="quote-trust-item">
+                            <div class="quote-trust-icon"><i class="fa-solid fa-tag"></i></div>
+                            <div>
+                                <p class="quote-trust-title">Transparent pricing</p>
+                                <p class="quote-trust-sub">Itemised estimate — no surprises.</p>
+                            </div>
+                        </div>
+                        <div class="quote-trust-item">
+                            <div class="quote-trust-icon"><i class="fa-solid fa-rotate"></i></div>
+                            <div>
+                                <p class="quote-trust-title">Recurring discounts</p>
+                                <p class="quote-trust-sub">Save more on weekly or fortnightly cleans.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -569,95 +889,94 @@
 
     <!-- FAQ -->
     <section id="faq" class="faq-section">
-        <div class="container">
-            <div class="faq-layout">
+        <div class="faq-layout">
 
-                <div class="faq-sidebar">
-                    <span class="eyebrow">FAQ</span>
-                    <h2 class="display-heading">Common<br><em>Questions</em></h2>
-                    <p class="faq-sidebar__sub">Everything you need to know before your first booking.</p>
-                    <div class="faq-contact-card">
-                        <div class="faq-contact-card__icon">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-                        <div>
-                            <p class="faq-contact-card__label">Still unsure?</p>
-                            <a href="tel:+618745145896" class="faq-contact-card__number">+61 8745 145 896</a>
-                        </div>
+            <!-- Sidebar -->
+            <div class="faq-sidebar">
+                <span class="eyebrow">FAQ</span>
+                <h2 class="display-heading">Common<br><em>Questions</em></h2>
+                <p class="faq-sidebar__sub">Everything you need to know before your first booking.</p>
+                <div class="faq-contact-card">
+                    <div class="faq-contact-card__icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div>
+                        <p class="faq-contact-card__label">Still unsure?</p>
+                        <a href="tel:+618745145896" class="faq-contact-card__number">+61 8745 145 896</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion -->
+            <div class="faq-accordion">
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Who do you offer services to?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-body" role="region">
+                        <p>We clean residential homes, apartments, and commercial office spaces throughout Melbourne —
+                            from the CBD to the outer suburbs. If you're unsure whether we cover your area, give us a
+                            call.</p>
                     </div>
                 </div>
 
-                <div class="faq-accordion">
-
-                    <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Who do you offer services to?</span>
-                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                        </button>
-                        <div class="faq-body">
-                            <p>We clean residential homes, apartments, and commercial office spaces throughout Melbourne
-                                — from the CBD to the outer suburbs. If you're unsure whether we cover your area, give
-                                us a call.</p>
-                        </div>
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>How is pricing determined?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-body" role="region">
+                        <p>Pricing is based on the size of your space and the type of clean required. Submit our quote
+                            form and we'll send a clear, itemised estimate — no obligation and no hidden fees, ever.</p>
                     </div>
-
-                    <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>How is pricing determined?</span>
-                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                        </button>
-                        <div class="faq-body">
-                            <p>Pricing is based on the size of your space and the type of clean required. Submit our
-                                quote form and we'll send a clear, itemised estimate — no obligation and no hidden fees,
-                                ever.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Are cleaning supplies included?</span>
-                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                        </button>
-                        <div class="faq-body">
-                            <p>Yes — we bring everything. Our team arrives fully equipped with eco-friendly, non-toxic
-                                cleaning products and professional gear. You don't need to provide a single thing.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>What hours are you available?</span>
-                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                        </button>
-                        <div class="faq-body">
-                            <p>We offer morning, afternoon, and weekend slots to fit around your schedule. Available
-                                times are shown in real-time when you book online — no back-and-forth required.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Are your cleaners background-checked?</span>
-                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                        </button>
-                        <div class="faq-body">
-                            <p>Every cleaner on our team passes a thorough background check and is fully insured before
-                                their first booking. Your home and workplace are in safe, trusted hands.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-trigger">
-                            <span>Can I set up a recurring clean?</span>
-                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                        </button>
-                        <div class="faq-body">
-                            <p>Absolutely. Many of our clients book weekly or fortnightly recurring cleans. Recurring
-                                bookings often qualify for a reduced rate — mention it when you request a quote.</p>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Are cleaning supplies included?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-body" role="region">
+                        <p>Yes — we bring everything. Our team arrives fully equipped with eco-friendly, non-toxic
+                            cleaning products and professional gear. You don't need to provide a single thing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>What hours are you available?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-body" role="region">
+                        <p>We offer morning, afternoon, and weekend slots to fit around your schedule. Available times
+                            are shown in real-time when you book online — no back-and-forth required.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Are your cleaners background-checked?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-body" role="region">
+                        <p>Every cleaner on our team passes a thorough background check and is fully insured before
+                            their first booking. Your home and workplace are in safe, trusted hands.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Can I set up a recurring clean?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-body" role="region">
+                        <p>Absolutely. Many of our clients book weekly or fortnightly recurring cleans. Recurring
+                            bookings often qualify for a reduced rate — mention it when you request a quote.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -709,36 +1028,35 @@
     </footer>
 
 
-    <!-- Scripts -->
+    <!-- Scripts — script.js REMOVED (was conflicting with FAQ accordion below) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             gsap.registerPlugin(ScrollTrigger);
 
-            // Mobile menu
+            // ── Mobile menu ──
             document.getElementById('menu-toggle').addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.toggle('hidden');
             });
 
-            // Hero entrance
+            // ── Hero entrance ──
             const heroTl = gsap.timeline();
             heroTl.to('#heroContent', { opacity: 1, duration: 0.1 });
             heroTl.from('.hero-item', { y: 50, opacity: 0, duration: 1, stagger: 0.15, ease: 'power4.out' });
 
-            // How It Works
+            // ── How It Works ──
             gsap.timeline({ scrollTrigger: { trigger: '#howitworks', start: 'top 80%' } })
                 .fromTo('#howitworksHeader', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' })
                 .fromTo('.how-it-works-item', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.2, ease: 'back.out(1.7)' }, '-=0.4');
 
-            // About Us
+            // ── About Us ──
             gsap.timeline({ scrollTrigger: { trigger: '#about-us', start: 'top 70%' } })
                 .fromTo('.about-text', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' });
 
-            // Services scroll reveal
+            // ── Services scroll reveal ──
             gsap.fromTo('.service-card, .trust-bar',
                 { y: 60, opacity: 0, scale: 0.95 },
                 {
@@ -748,7 +1066,7 @@
                 }
             );
 
-            // Quote form
+            // ── Quote form ──
             gsap.fromTo('.quote-reveal',
                 { y: 60, opacity: 0 },
                 {
@@ -758,7 +1076,7 @@
                 }
             );
 
-            // Testimonials reveal
+            // ── Testimonials reveal ──
             if ('IntersectionObserver' in window) {
                 const obs = new IntersectionObserver((entries) => {
                     entries.forEach(e => {
@@ -773,7 +1091,7 @@
                 document.querySelectorAll('#testimonials .testi-reveal').forEach(el => el.classList.add('visible'));
             }
 
-            // Testimonials Swiper — custom dots (no Swiper pagination), rewind mode
+            // ── Testimonials Swiper ──
             const dots = document.querySelectorAll('.testi-dot');
 
             function updateDots(index) {
@@ -797,7 +1115,6 @@
                 }
             });
 
-            // Dot clicks
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', () => {
                     testiSwiper.slideTo(i);
@@ -805,7 +1122,7 @@
                 });
             });
 
-            // FAQ accordion
+            // ── FAQ Accordion ──
             document.querySelectorAll('.faq-item').forEach(item => {
                 const trigger = item.querySelector('.faq-trigger');
                 const body = item.querySelector('.faq-body');
@@ -814,14 +1131,26 @@
                 trigger.addEventListener('click', () => {
                     const isOpen = item.classList.contains('open');
 
+                    // Close all
                     document.querySelectorAll('.faq-item.open').forEach(el => {
                         el.classList.remove('open');
+                        el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
                         el.querySelector('.faq-body').style.maxHeight = null;
                     });
 
+                    // Open clicked (if it was closed)
                     if (!isOpen) {
                         item.classList.add('open');
+                        trigger.setAttribute('aria-expanded', 'true');
                         body.style.maxHeight = (inner ? inner.scrollHeight + 46 : body.scrollHeight) + 'px';
+                    }
+                });
+
+                // Keyboard support
+                trigger.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        trigger.click();
                     }
                 });
             });
