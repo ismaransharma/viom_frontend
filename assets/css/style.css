@@ -385,7 +385,6 @@ body {
     padding: 0 24px;
 }
 
-/* Header: title left, rating box right */
 .testi-head {
     display: flex;
     align-items: flex-start;
@@ -484,7 +483,6 @@ body {
     margin: 0;
 }
 
-/* Slider */
 .testi-slider-wrap {
     position: relative;
 }
@@ -497,7 +495,6 @@ body {
     height: auto;
 }
 
-/* Card */
 .testi-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.09);
@@ -597,7 +594,6 @@ body {
     margin: 0;
 }
 
-/* ── Nav row — dots LEFT · arrows RIGHT ── */
 .testi-nav-row {
     display: flex;
     align-items: center;
@@ -607,7 +603,6 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-/* Custom dots — plain spans, no Swiper pagination */
 .testi-dots {
     display: flex;
     align-items: center;
@@ -632,7 +627,6 @@ body {
     background: var(--green);
 }
 
-/* Arrow buttons */
 .testi-arrows {
     display: flex;
     gap: 10px;
@@ -663,7 +657,6 @@ body {
     transform: scale(0.94);
 }
 
-/* Reveal */
 .testi-reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -675,10 +668,10 @@ body {
     transform: none;
 }
 
-/* ════════════════════════════════════════════════════
-           GET A QUOTE — matches style.css design system
-        ════════════════════════════════════════════════════ */
 
+/* ════════════════════════════════════════════════════
+   GET A QUOTE
+════════════════════════════════════════════════════ */
 .quote-section {
     padding: 100px 0;
     background: var(--white);
@@ -703,7 +696,6 @@ body {
     }
 }
 
-/* Form card */
 .quote-form-card {
     background: var(--white);
     border: 1px solid var(--border);
@@ -854,7 +846,6 @@ body {
     transform: translateX(3px);
 }
 
-/* Side panel */
 .quote-side {
     display: flex;
     flex-direction: column;
@@ -976,6 +967,7 @@ body {
     font-family: var(--font-body);
 }
 
+
 /* ════════════════════════════════════════════════════
    FAQ
 ════════════════════════════════════════════════════ */
@@ -1002,7 +994,6 @@ body {
     }
 }
 
-/* Sidebar */
 .faq-sidebar {
     position: sticky;
     top: 120px;
@@ -1051,7 +1042,6 @@ body {
     max-width: 280px;
 }
 
-/* Contact card */
 .faq-contact-card {
     display: flex;
     align-items: center;
@@ -1095,7 +1085,6 @@ body {
     color: #fcd303;
 }
 
-/* Accordion */
 .faq-accordion {
     display: flex;
     flex-direction: column;
@@ -1137,7 +1126,6 @@ body {
     color: #55b331;
 }
 
-/* Icon pill */
 .faq-icon {
     flex-shrink: 0;
     width: 32px;
@@ -1160,7 +1148,6 @@ body {
     transform: rotate(45deg);
 }
 
-/* Body */
 .faq-body {
     max-height: 0;
     overflow: hidden;
@@ -1173,6 +1160,7 @@ body {
     line-height: 1.7;
     color: #4b5563;
 }
+
 
 /* ════════════════════════════════════════════════════
    ABOUT / MISC

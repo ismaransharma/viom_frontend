@@ -1,0 +1,284 @@
+/* ═══════════════════════════════════════════════════
+   VIOM CLEANING — DUST ANIMATION STYLESHEET
+   dust.css  —  Sand wind / scrub / tiny white stars
+   ═══════════════════════════════════════════════════ */
+
+.dust-section {
+    position: relative;
+}
+
+/* ── Dust cluster wrapper ── */
+.dust-cluster {
+    position: absolute;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* ════════════════════════════════════════════════════
+   SAND GRAIN PARTICLES  (wind-blown)
+════════════════════════════════════════════════════ */
+.dust-particle {
+    position: absolute;
+    border-radius: 35% 55% 45% 50% / 40% 50% 55% 35%;
+    background: linear-gradient(135deg,
+            #f2debf 0%,
+            #e6cfaa 20%,
+            #d4b88c 45%,
+            #c9a776 65%,
+            #b8945e 85%,
+            #a88452 100%);
+    opacity: 0.78;
+    filter: blur(0);
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 0 2px rgba(255, 250, 235, 0.5);
+    transform: translateY(0) scale(0.5);
+    animation:
+        sandFadeIn 0.4s ease forwards,
+        sandGust var(--gust-dur, 2.5s) var(--gust-delay, 0.4s) infinite alternate ease-in-out;
+}
+
+@keyframes sandFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.78;
+    }
+}
+
+@keyframes sandGust {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+    }
+
+    35% {
+        transform: translate(var(--gx1, 8px), var(--gy1, -4px)) scale(0.6);
+    }
+
+    70% {
+        transform: translate(var(--gx2, -6px), var(--gy2, 2px)) scale(0.48);
+    }
+
+    100% {
+        transform: translate(var(--gx3, 4px), var(--gy3, -1px)) scale(0.52);
+    }
+}
+
+/* ── Micro floaters ── */
+.dust-micro {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #b8a080, #9a7e5a);
+    opacity: 0;
+    animation:
+        dustFloat var(--float-dur, 1.4s) var(--float-delay, 0s) ease-out forwards,
+        microWind var(--micro-wind-dur, 1.8s) var(--micro-wind-delay, 0s) infinite alternate ease-in-out;
+}
+
+@keyframes dustFloat {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0.5);
+    }
+
+    25% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--fx, 12px), var(--fy, -20px)) scale(0.15);
+    }
+}
+
+@keyframes microWind {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(var(--mx, 6px), var(--my, -4px));
+    }
+}
+
+/* ── Wiped state ── */
+.dust-cluster.wiped .dust-particle,
+.dust-cluster.wiped .dust-micro {
+    animation: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+}
+
+/* ════════════════════════════════════════════════════
+   CLOTH – SCRUBBING BACK & FORTH
+════════════════════════════════════════════════════ */
+.dust-cloth {
+    position: absolute;
+    pointer-events: none;
+    z-index: 60;
+    width: 90px;
+    height: 52px;
+    background:
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255, 255, 255, .06) 3px, rgba(255, 255, 255, .06) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255, 255, 255, .04) 3px, rgba(255, 255, 255, .04) 4px),
+        linear-gradient(135deg, #f5ede0, #ecdec8 18%, #e0d0b4 36%, #d4c4a0 52%, #e0d0b4 68%, #ecdec8 84%, #f5ede0 100%);
+    border-radius: 14px 10px 10px 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .22), 0 2px 6px rgba(0, 0, 0, .15), inset 0 1px 0 rgba(255, 255, 255, .35), inset 0 -1px 0 rgba(0, 0, 0, .08);
+    border: 1px solid rgba(200, 180, 150, .6);
+    transform-origin: center center;
+    opacity: 0;
+}
+
+@keyframes clothScrub {
+    0% {
+        opacity: 1;
+        transform: translateX(0) rotate(-3deg);
+    }
+
+    25% {
+        transform: translateX(var(--scrub-range)) rotate(2deg);
+    }
+
+    50% {
+        transform: translateX(0) rotate(-2deg);
+    }
+
+    75% {
+        transform: translateX(var(--scrub-range)) rotate(1deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+.dust-cloth.scrub {
+    animation: clothScrub var(--scrub-dur, 1.8s) ease-in-out forwards;
+}
+
+/* ── Dust trail ── */
+.dust-trail {
+    position: absolute;
+    pointer-events: none;
+    z-index: 55;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right,
+            rgba(180, 155, 110, 0.35),
+            rgba(160, 135, 90, 0.18),
+            transparent);
+    opacity: 0;
+    transform-origin: left center;
+}
+
+@keyframes trailFade {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scaleX(0.5);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scaleX(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleX(1);
+    }
+}
+
+.dust-trail.visible {
+    animation: trailFade 1.4s ease forwards;
+}
+
+/* ════════════════════════════════════════════════════
+   SHINE – TINY WHITE SPARKLE STARS ONLY
+════════════════════════════════════════════════════ */
+.dust-shine {
+    position: absolute;
+    pointer-events: none;
+    z-index: 65;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    /* no circular gleam */
+}
+
+/* Sparkle star – pure white 4‑point line */
+.shine-sparkle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    animation: sparklePulse var(--sp-dur, 0.45s) var(--sp-delay, 0s) ease-out forwards;
+    pointer-events: none;
+}
+
+.shine-sparkle::before,
+.shine-sparkle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--sp-size, 6px);
+    height: 1.5px;
+    background: #ffffff;
+    transform-origin: left center;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
+}
+
+.shine-sparkle::before {
+    transform: translate(0, -0.75px) rotate(0deg);
+}
+
+.shine-sparkle::after {
+    transform: translate(0, -0.75px) rotate(45deg);
+}
+
+.shine-sparkle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--sp-size, 6px);
+    height: 1.5px;
+    background: #ffffff;
+    transform-origin: left center;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
+}
+
+.shine-sparkle span:nth-child(1) {
+    transform: translate(0, -0.75px) rotate(90deg);
+}
+
+.shine-sparkle span:nth-child(2) {
+    transform: translate(0, -0.75px) rotate(135deg);
+}
+
+@keyframes sparklePulse {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translate(var(--sp-move-x, 0), var(--sp-move-y, 0)) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(calc(var(--sp-move-x, 0) * 1.3), calc(var(--sp-move-y, 0) * 1.3)) scale(0.4);
+    }
+}
