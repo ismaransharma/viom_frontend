@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════
-   VIOM CLEANING — SECTIONS STYLESHEET
-   Sections: Services · Testimonials · FAQ
+   VIOM CLEANING — MAIN STYLESHEET
    ═══════════════════════════════════════════════════ */
+
 *,
 *::before,
 *::after {
@@ -21,8 +21,8 @@
     --gray-text: #64748b;
     --border: rgba(0, 0, 0, 0.07);
     --border-light: rgba(255, 255, 255, 0.1);
-    --font-display: 'ClashGrotesk', sans-serif;
-    --font-body: 'ClashGrotesk', sans-serif;
+    --font-display: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
     --radius-sm: 12px;
     --radius-md: 18px;
     --radius-lg: 24px;
@@ -32,16 +32,17 @@
     --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.active{
-    color: #55b331;
-}
-
 body {
     font-family: var(--font-body);
     color: var(--navy);
     background: var(--white);
     -webkit-font-smoothing: antialiased;
     margin: 0;
+    scroll-behavior: smooth;
+}
+
+.active {
+    color: var(--green);
 }
 
 .container {
@@ -51,6 +52,7 @@ body {
     padding: 0 24px;
 }
 
+/* ── Typography helpers ── */
 .eyebrow {
     display: inline-block;
     font-size: 11px;
@@ -59,10 +61,6 @@ body {
     text-transform: uppercase;
     color: var(--green);
     margin-bottom: 12px;
-}
-
-.eyebrow--light {
-    color: rgba(255, 255, 255, 0.5);
 }
 
 .display-heading {
@@ -77,14 +75,6 @@ body {
 .display-heading em {
     font-style: italic;
     color: var(--green);
-}
-
-.display-heading--light {
-    color: var(--white);
-}
-
-.display-heading--light em {
-    color: var(--yellow);
 }
 
 .section-subtext {
@@ -126,7 +116,21 @@ body {
     transform: translateX(3px);
 }
 
-/* SERVICES */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ════════════════════════════════════════════════════
+   SERVICES
+════════════════════════════════════════════════════ */
 .services-section {
     padding: 100px 0 80px;
     background: var(--white);
@@ -166,8 +170,8 @@ body {
     overflow: hidden;
     text-decoration: none;
     color: inherit;
-    transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
     position: relative;
+    transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
 }
 
 .service-card:hover {
@@ -199,8 +203,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     display: block;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-card:hover .service-card__img-wrap img {
@@ -338,8 +342,343 @@ body {
 }
 
 
+/* ════════════════════════════════════════════════════
+   TESTIMONIALS
+════════════════════════════════════════════════════ */
+.testi-section {
+    position: relative;
+    background: var(--navy);
+    padding: 100px 0 80px;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
 
-/* FAQ */
+.testi-watermark {
+    position: absolute;
+    top: -10px;
+    right: -24px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(80px, 14vw, 180px);
+    color: rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
+.testi-section::before {
+    content: '';
+    position: absolute;
+    bottom: -120px;
+    left: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(85, 179, 49, 0.1);
+    pointer-events: none;
+}
+
+.testi-wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header: title left, rating box right */
+.testi-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+}
+
+.testi-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 14px;
+}
+
+.testi-eyebrow-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(85, 179, 49, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 0 5px rgba(85, 179, 49, 0);
+    }
+}
+
+.testi-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--white);
+    margin: 0;
+}
+
+.testi-title em {
+    font-style: italic;
+    color: var(--yellow);
+}
+
+.testi-rating-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+    padding: 22px 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.testi-stars-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.testi-stars-row i {
+    color: var(--yellow);
+    font-size: 13px;
+}
+
+.testi-rating-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.testi-rating-num span {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.testi-rating-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0;
+}
+
+/* Slider */
+.testi-slider-wrap {
+    position: relative;
+}
+
+.testiSwiper {
+    overflow: hidden !important;
+}
+
+.testi-slide {
+    height: auto;
+}
+
+/* Card */
+.testi-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: var(--radius-lg);
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.testi-card:hover {
+    border-color: rgba(85, 179, 49, 0.3);
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-3px);
+}
+
+.testi-card--featured {
+    background: rgba(85, 179, 49, 0.1);
+    border-color: rgba(85, 179, 49, 0.3);
+}
+
+.testi-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.testi-card-stars {
+    display: flex;
+    gap: 3px;
+}
+
+.testi-card-stars i {
+    color: var(--yellow);
+    font-size: 11px;
+}
+
+.testi-card-tag {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: rgba(85, 179, 49, 0.12);
+    padding: 4px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.testi-card-quote {
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.72);
+    font-style: normal;
+    flex: 1;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.testi-card-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.testi-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--c, var(--green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+}
+
+.testi-author-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 2px;
+}
+
+.testi-author-role {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.38);
+    margin: 0;
+}
+
+/* ── Nav row — dots LEFT · arrows RIGHT ── */
+.testi-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Custom dots — plain spans, no Swiper pagination */
+.testi-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.testi-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: width 0.3s ease, border-radius 0.3s ease, background 0.3s ease;
+}
+
+.testi-dot.active {
+    width: 28px;
+    border-radius: 4px;
+    background: var(--green);
+}
+
+/* Arrow buttons */
+.testi-arrows {
+    display: flex;
+    gap: 10px;
+}
+
+.testi-arrow {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.22s ease;
+}
+
+.testi-arrow:hover {
+    border-color: var(--green);
+    color: var(--green);
+    background: rgba(85, 179, 49, 0.1);
+}
+
+.testi-arrow:active {
+    transform: scale(0.94);
+}
+
+/* Reveal */
+.testi-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.testi-reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ════════════════════════════════════════════════════
+   FAQ
+════════════════════════════════════════════════════ */
 .faq-section {
     padding: 100px 0;
     background: var(--off-white);
@@ -486,28 +825,38 @@ body {
 }
 
 .faq-body p {
-    padding: 0 26px 26px;
+    padding: 20px 26px 26px;
     font-size: 15px;
     line-height: 1.72;
     color: var(--gray-text);
     border-top: 1px solid var(--border);
     margin: 0;
-    padding-top: 20px;
 }
 
-/* Reveal animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+
+/* ════════════════════════════════════════════════════
+   ABOUT / MISC
+════════════════════════════════════════════════════ */
+.about-container {
+    background-color: #f8f9f4;
+    border-radius: 3rem;
 }
 
-.reveal.visible {
-    opacity: 1;
-    transform: none;
+.stats-border {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* RESPONSIVE */
+@media (max-width: 639px) {
+    .stats-border:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1.5rem;
+    }
+}
+
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════════════ */
 @media (max-width: 1100px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -522,7 +871,7 @@ body {
 @media (max-width: 900px) {
 
     .services-section,
-    .testimonials-section,
+    .testi-section,
     .faq-section {
         padding: 72px 0;
     }
@@ -540,18 +889,12 @@ body {
         max-width: 100%;
     }
 
-    .testi-card {
-        min-width: 100%;
-    }
-
-    .testi-header {
+    .testi-head {
         flex-direction: column;
-        align-items: flex-start;
     }
 
-    .testi-controls {
-        flex-direction: row;
-        align-items: center;
+    .testi-rating-box {
+        width: 100%;
     }
 }
 
@@ -561,7 +904,7 @@ body {
     }
 
     .services-section,
-    .testimonials-section,
+    .testi-section,
     .faq-section {
         padding: 60px 0;
     }
@@ -600,18 +943,23 @@ body {
         font-size: 34px;
     }
 
+    .testi-card {
+        padding: 24px 22px;
+    }
+
+    .testi-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 13px;
+    }
+
     .faq-trigger {
         padding: 20px;
         font-size: 15px;
     }
 
     .faq-body p {
-        padding: 0 20px 20px;
-        padding-top: 16px;
-    }
-
-    .testi-card {
-        padding: 28px 24px;
+        padding: 16px 20px 20px;
     }
 }
 
