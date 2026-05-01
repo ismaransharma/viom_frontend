@@ -91,52 +91,64 @@
                 <div class="relative w-full h-screen">
                     <img src="assets/images/hero.png" alt="VIOM Cleaning Services"
                         class="w-full h-full object-cover object-center">
-                    <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
                 </div>
 
                 <!-- Card overlay -->
                 <div class="absolute inset-0 z-10 pointer-events-none">
                     <div class="max-w-[1440px] mx-auto h-full flex items-center px-6 md:px-12 lg:px-20">
+
+                        <!-- OUTER: clip-path only, no blur -->
                         <div id="heroContent"
-                            class="pointer-events-auto bg-white/35 backdrop-blur-[7px] p-5 md:p-11 shadow-2xl border border-white/40 opacity-0 w-full md:w-[450px] lg:w-[500px] max-w-lg"
-                            style="clip-path: path('M 30,0 L 460,20 Q 500,20 500,40 L 500,360 Q 500,400 460,400 L 40,400 Q 0,400 0,360 L 0,30 Q 0,0 30,0 Z');">
+                            class="pointer-events-auto opacity-0 w-full md:w-[450px] lg:w-[500px] max-w-lg"
+                            style="overflow: hidden;">
 
-                            <div class="flex items-center gap-2 mb-6 hero-item">
-                                <span class="flex h-2 w-2 rounded-full bg-[#55b331] animate-pulse"></span>
-                                <span class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#0a2348]/85">
-                                    Melbourne, Australia
-                                </span>
+                            <!-- INNER: blur + bg, no clip-path -->
+                            <div class="p-5 md:p-11 shadow-2xl border border-white/40" style="
+                                background: rgba(255,255,255,0.35);
+                                -webkit-backdrop-filter: blur(7px);
+                                backdrop-filter: blur(7px);
+                            ">
+
+                                <div class="flex items-center gap-2 mb-6 hero-item">
+                                    <span class="flex h-2 w-2 rounded-full bg-[#55b331] animate-pulse"></span>
+                                    <span
+                                        class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#0a2348]/85">
+                                        Melbourne, Australia
+                                    </span>
+                                </div>
+
+                                <h1
+                                    class="text-[26px] md:text-[30px] font-bold text-[#081c3a] leading-[1.15] mb-6 tracking-tight hero-item">
+                                    Residential &amp;<br>
+                                    <span class="text-[#55b331] drop-shadow-sm">Commercial</span> Cleaning
+                                </h1>
+
+                                <p
+                                    class="text-sm md:text-base leading-relaxed mb-10 hero-item text-[#0a2348] font-medium">
+                                    Professional cleaning services for homes and offices across Melbourne.
+                                </p>
+
+                                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 hero-item">
+                                    <a href="#get-quote"
+                                        class="text-center bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-4 px-8 rounded-full transition-all text-sm shadow-lg shadow-yellow-500/20 active:scale-95">
+                                        Get a Free Quote
+                                    </a>
+                                    <a href="#services"
+                                        class="text-center bg-white text-[#081c3a] font-bold py-4 px-8 rounded-full border border-gray-100 hover:shadow-md transition-all text-sm active:scale-95">
+                                        View Services
+                                    </a>
+                                </div>
+
                             </div>
-
-                            <h1
-                                class="text-[26px] md:text-[30px] font-bold text-[#081c3a] leading-[1.15] mb-6 tracking-tight hero-item">
-                                Residential &amp;<br>
-                                <span class="text-[#55b331] drop-shadow-sm">Commercial</span> Cleaning
-                            </h1>
-
-                            <p class="text-sm md:text-base leading-relaxed mb-10 hero-item text-[#0a2348] font-medium">
-                                Professional cleaning services for homes and offices across Melbourne.
-                            </p>
-
-                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 hero-item">
-                                <a href="#get-quote"
-                                    class="text-center bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-4 px-8 rounded-full transition-all text-sm shadow-lg shadow-yellow-500/20 active:scale-95">
-                                    Get a Free Quote
-                                </a>
-                                <a href="#services"
-                                    class="text-center bg-white text-[#081c3a] font-bold py-4 px-8 rounded-full border border-gray-100 hover:shadow-md transition-all text-sm active:scale-95">
-                                    View Services
-                                </a>
-                            </div>
-
                         </div>
+
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
-
 
     <!-- How It Works -->
     <section id="howitworks" class="dust-section py-20 bg-[#f0f7ed]">
@@ -724,19 +736,6 @@
         </div>
     </footer>
 
-    <script>
-        window.addEventListener('load', function () {
-            const card = document.getElementById('heroContent');
-            function updateClip() {
-                const h = card.offsetHeight;
-                const w = card.offsetWidth;
-                const r = 40; // corner curve size — increase for more curve
-                card.style.clipPath = `path('M ${r},0 L ${w - r},${r * 0.4} Q ${w},${r * 0.4} ${w},${r * 1.2} L ${w},${h - r} Q ${w},${h} ${w - r},${h} L ${r},${h} Q 0,${h} 0,${h - r} L 0,${r} Q 0,0 ${r},0 Z')`;
-            }
-            updateClip();
-            window.addEventListener('resize', updateClip);
-        });
-    </script>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -744,6 +743,17 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/dust.js"></script>
 
+    <script>
+        const card = document.getElementById('heroContent');
+        function updateClip() {
+            const h = card.offsetHeight;
+            const w = card.offsetWidth;
+            const r = 40;
+            card.style.clipPath = `path('M ${r},0 L ${w - r},${r * 0.4} Q ${w},${r * 0.4} ${w},${r * 1.2} L ${w},${h - r} Q ${w},${h} ${w - r},${h} L ${r},${h} Q 0,${h} 0,${h - r} L 0,${r} Q 0,0 ${r},0 Z')`;
+        }
+        updateClip();
+        window.addEventListener('resize', updateClip);
+    </script>
 </body>
 
 </html>
