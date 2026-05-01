@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — VIOM Cleaning Services</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts — same as index.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Same stylesheets as index.html — inherits ClashGrotesk + all design tokens -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dust.css">
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar — identical to index.html -->
+    <nav class="py-2 px-6 md:px-12"
+        style="position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.2);">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between container">
+
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="assets/images/viom-facility-dark.png" alt="VIOM Cleaning" class="h-20 w-auto">
+                </a>
+            </div>
+
+            <ul class="hidden lg:flex items-center space-x-10 text-[16px] font-bold text-gray-700">
+                <li><a href="index.html" class="hover:text-[#55b331] transition">Home</a></li>
+                <li><a href="index.html#services" class="hover:text-[#55b331] transition">Services</a></li>
+                <li><a href="aboutUs.html" class="hover:text-[#55b331] transition active">About Us</a></li>
+                <li><a href="index.html#faq" class="hover:text-[#55b331] transition">FAQ</a></li>
+            </ul>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="flex items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 h-11">
+                    <div class="bg-[#081c3a] text-white w-9 h-9 rounded-full flex items-center justify-center mr-3">
+                        <i class="fa fa-phone text-xs"></i>
+                    </div>
+                    <span class="font-semibold text-gray-800 text-sm">+61 8745 145 896</span>
+                </div>
+                <a href="index.html#get-quote"
+                    class="bg-[#FCD303] hover:bg-yellow-400 text-[#081c3a] font-bold px-7 py-2.5 rounded-full h-11 flex items-center transition text-sm">
+                    Free Quote
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="lg:hidden text-gray-700 text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 space-y-3 pb-4 border-t border-gray-100 pt-4">
+            <a href="index.html" class="block text-base font-medium text-gray-700 py-1">Home</a>
+            <a href="index.html#services" class="block text-base font-medium text-gray-700 py-1">Services</a>
+            <a href="aboutUs.html" class="block text-base font-medium text-gray-700 py-1">About Us</a>
+            <a href="index.html#faq" class="block text-base font-medium text-gray-700 py-1">FAQ</a>
+            <div class="flex flex-col space-y-3 pt-3 border-t border-gray-100">
+                <div class="flex items-center text-gray-700 font-medium text-sm">
+                    <i class="fa fa-phone mr-3 text-[#55b331] text-xs"></i> +61 8745 145 896
+                </div>
+                <a href="index.html#get-quote"
+                    class="bg-[#FCD303] text-center py-3 rounded-full font-bold text-sm text-[#081c3a]">Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ── HERO ── -->
+    <section class="about-page-hero">
+        <div class="about-page-hero-inner">
+
+            <!-- Left: text -->
+            <div class="about-hero-text about-reveal">
+                <p class="eyebrow">Who We Are</p>
+                <h1 class="display-heading mb-6">
+                    Cleaning Done <em>Right.</em><br>Every Time.
+                </h1>
+                <p class="text-gray-600 leading-relaxed mb-8 max-w-md" style="font-size: clamp(15px, 1.4vw, 17px);">
+                    VIOM Facility Services delivers professional commercial and facilities cleaning across Melbourne —
+                    built on trust, trained teams, and a genuine commitment to quality.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="index.html#get-quote"
+                        class="bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-3.5 px-8 rounded-full transition text-sm">
+                        Get a Free Quote
+                    </a>
+                    <a href="index.html#services"
+                        class="border-2 border-[#081c3a] text-[#081c3a] hover:bg-[#081c3a] hover:text-white font-bold py-3.5 px-8 rounded-full transition text-sm">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: image -->
+            <div class="about-reveal" style="transition-delay: 0.15s;">
+                <img src="assets/images/whoweare.jpg" alt="VIOM Cleaning Team" class="about-hero-img">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ── STATS STRIP ── -->
+    <div class="about-stats-strip">
+        <div class="about-stats-inner">
+            <div class="about-stat-item about-reveal">
+                <div class="about-stat-num">1+</div>
+                <div class="about-stat-label">Years in Melbourne</div>
+            </div>
+            <div class="about-stat-item about-reveal" style="transition-delay: 0.1s;">
+                <div class="about-stat-num">500+</div>
+                <div class="about-stat-label">Jobs Completed</div>
+            </div>
+            <div class="about-stat-item about-reveal" style="transition-delay: 0.2s;">
+                <div class="about-stat-num">4.9</div>
+                <div class="about-stat-label">Average Rating</div>
+            </div>
+            <div class="about-stat-item about-reveal" style="transition-delay: 0.3s;">
+                <div class="about-stat-num">100%</div>
+                <div class="about-stat-label">Insured & Vetted</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ── MISSION ── -->
+    <section class="about-mission">
+        <div class="about-mission-inner">
+
+            <div class="about-reveal">
+                <img src="assets/images/whoweare.jpg" alt="Our Mission" class="w-full shadow-xl"
+                    style="height: clamp(280px, 40vw, 460px); object-fit: cover; border-radius: var(--radius-xl);">
+            </div>
+
+            <div class="about-reveal" style="transition-delay: 0.15s;">
+                <p class="eyebrow">Our Mission</p>
+                <h2 class="display-heading mb-6">
+                    A Cleaner Space.<br><em>A Better Day.</em>
+                </h2>
+                <p class="text-gray-600 leading-relaxed mb-5" style="font-size: 15px;">
+                    We believe a clean environment improves wellbeing, productivity, and peace of mind. Our mission is
+                    simple — deliver consistently excellent cleaning that you can rely on, every single visit.
+                </p>
+                <p class="text-gray-600 leading-relaxed mb-8" style="font-size: 15px;">
+                    Every cleaner on our team is personally vetted, background-checked, and trained before their first
+                    booking. We use eco-friendly, non-toxic products — safe for your staff and the planet.
+                </p>
+
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <div class="bg-[#55b331] rounded-full p-1 mt-1 shrink-0">
+                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
+                                viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[#081c3a] font-semibold text-sm md:text-base">All cleaners fully insured and
+                            background-checked</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="bg-[#55b331] rounded-full p-1 mt-1 shrink-0">
+                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
+                                viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[#081c3a] font-semibold text-sm md:text-base">Eco-friendly, non-toxic products
+                            only</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="bg-[#55b331] rounded-full p-1 mt-1 shrink-0">
+                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
+                                viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[#081c3a] font-semibold text-sm md:text-base">Flexible scheduling — morning,
+                            afternoon, weekends</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="bg-[#55b331] rounded-full p-1 mt-1 shrink-0">
+                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
+                                viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <span class="text-[#081c3a] font-semibold text-sm md:text-base">Transparent pricing — no hidden
+                            fees, ever</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ── VALUES ── -->
+    <section class="about-values">
+        <div class="about-values-inner">
+
+            <div class="about-values-header about-reveal">
+                <p class="eyebrow">What Drives Us</p>
+                <h2 class="display-heading">Our Core <em>Values</em></h2>
+            </div>
+
+            <div class="about-values-grid">
+
+                <div class="about-value-card about-reveal">
+                    <div class="about-value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="text-[#081c3a] font-bold text-lg mb-2">Trust & Safety</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Every team member is background-checked and fully
+                        insured. Your workplace is in safe hands.</p>
+                </div>
+
+                <div class="about-value-card about-reveal" style="transition-delay: 0.08s;">
+                    <div class="about-value-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3 class="text-[#081c3a] font-bold text-lg mb-2">Eco Responsibility</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Non-toxic, biodegradable products — good for your
+                        space and the environment.</p>
+                </div>
+
+                <div class="about-value-card about-reveal" style="transition-delay: 0.16s;">
+                    <div class="about-value-icon"><i class="fa-solid fa-star"></i></div>
+                    <h3 class="text-[#081c3a] font-bold text-lg mb-2">Quality First</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We don't cut corners. Every clean is thorough,
+                        consistent, and held to the highest standard.</p>
+                </div>
+
+                <div class="about-value-card about-reveal" style="transition-delay: 0.04s;">
+                    <div class="about-value-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3 class="text-[#081c3a] font-bold text-lg mb-2">Reliability</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We show up on time, every time. Consistent
+                        scheduling you can build your routine around.</p>
+                </div>
+
+                <div class="about-value-card about-reveal" style="transition-delay: 0.12s;">
+                    <div class="about-value-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 class="text-[#081c3a] font-bold text-lg mb-2">Transparency</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Clear, itemised pricing before every job. No
+                        surprises, no hidden fees — ever.</p>
+                </div>
+
+                <div class="about-value-card about-reveal" style="transition-delay: 0.20s;">
+                    <div class="about-value-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3 class="text-[#081c3a] font-bold text-lg mb-2">Care</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We treat every property as if it were our own —
+                        with genuine care and attention to detail.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ── CTA ── -->
+    <section class="about-cta">
+        <div class="about-cta-inner about-reveal">
+            <p class="eyebrow" style="color: #55b331;">Ready to Get Started?</p>
+            <h2 class="display-heading mb-6" style="color: #fff;">
+                Book Your First<br><em style="color: #fcd303;">Clean Today</em>
+            </h2>
+            <p class="mb-8" style="color: rgba(255,255,255,0.6); font-size: 15px;">
+                No obligation. Get a free, itemised quote within 24 hours.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="index.html#get-quote"
+                    class="bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-4 px-10 rounded-full transition text-sm">
+                    Get a Free Quote
+                </a>
+                <a href="tel:+618745145896" class="font-bold py-4 px-10 rounded-full transition text-sm"
+                    style="border: 1px solid rgba(255,255,255,0.25); color: #fff;">
+                    <i class="fa fa-phone mr-2 text-[#55b331]"></i> Call Us Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer — identical to index.html -->
+    <footer class="bg-[#081c3a] text-white py-16 px-6 md:px-12">
+        <div class="container mx-auto max-w-[1300px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/images/logo.jpeg" alt="VIOM Cleaning" class="h-17 w-auto mb-4 rounded-lg">
+                    <p class="text-white/55 text-sm leading-relaxed max-w-xs">
+                        Professional cleaning services for homes and offices across Melbourne.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-5 text-white/90 text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="text-white/55 hover:text-white transition">Home</a></li>
+                        <li><a href="index.html#services" class="text-white/55 hover:text-white transition">Services</a>
+                        </li>
+                        <li><a href="aboutUs.html" class="text-white/55 hover:text-white transition">About Us</a></li>
+                        <li><a href="index.html#faq" class="text-white/55 hover:text-white transition">FAQ</a></li>
+                        <li><a href="index.html#get-quote" class="text-white/55 hover:text-white transition">Get a
+                                Quote</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-5 text-white/90 text-sm uppercase tracking-wider">Contact</h4>
+                    <ul class="space-y-3 text-sm text-white/55">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-[#55b331] w-4"></i>
+                            <a href="tel:+618745145896" class="hover:text-white transition">+61 8745 145 896</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-[#55b331] w-4"></i>
+                            <a href="mailto:info@viomcleaning.com.au"
+                                class="hover:text-white transition">info@viomcleaning.com.au</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-[#55b331] w-4 mt-0.5"></i>
+                            <span>Melbourne, Victoria, Australia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-white/35 text-sm">
+                &copy; 2024 VIOM Cleaning Services. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts — same order as index.html -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/dust.js"></script>
+
+    <script>
+        // Mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.about-reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>
