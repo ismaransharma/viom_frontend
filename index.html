@@ -90,7 +90,7 @@
 
 
     <!-- Hero -->
-    <section id="hero" class="dust-section relative bg-white overflow-hidden flex items-stretch h-180">
+    <section id="hero" class="dust-section relative bg-white overflow-hidden flex items-stretch h-180 z-1000">
         <div class="w-full flex" style="padding: 0 clamp(16px, 8vw, 100px);">
             <div class="relative flex flex-col w-full overflow-hidden" style="border-radius: 1.5rem; min-height: 8vh;">
 
@@ -423,7 +423,6 @@
 
 
     <!-- Testimonials -->
-    <!-- Testimonials -->
     <section id="testimonials" class="dust-section testi-section">
         <!-- <span class="testi-watermark" aria-hidden="true">Reviews</span> -->
         <div class="testi-wrap">
@@ -618,6 +617,45 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Partners Marquee Section -->
+    <!-- Partners Marquee Section -->
+    <section id="partners" class="dust-section relative overflow-hidden bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+
+            <!-- Heading -->
+            <div class="text-center mb-10 md:mb-14 reveal-fade">
+                <p
+                    class="eyebrow inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-neutral-500 mb-3">
+                    <span class="testi-eyebrow-dot inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Trusted Partners
+                </p>
+                <h2 class="display-heading text-3xl md:text-5xl font-bold text-neutral-900">
+                    Currently <em class="text-emerald-600 not-italic">partnering with</em>
+                </h2>
+            </div>
+
+            <!-- Marquee wrapper -->
+            <div
+                class="partners-marquee-wrap relative max-w-6xl mx-auto overflow-hidden rounded-xl bg-neutral-50/50 px-4 py-6 md:px-8 md:py-8">
+
+                <!-- Gradient fades -->
+                <div
+                    class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-r from-neutral-50/50 via-neutral-50/40 to-transparent z-10">
+                </div>
+                <div
+                    class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-l from-neutral-50/50 via-neutral-50/40 to-transparent z-10">
+                </div>
+
+                <!-- Draggable track -->
+                <div id="partnersTrackWrap" class="partners-track-wrap cursor-grab select-none overflow-hidden">
+                    <div id="partnersTrack" class="partners-track flex items-center divide-x divide-neutral-200">
+                        <!-- Logos injected by JS -->
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
