@@ -347,8 +347,9 @@ body {
 ════════════════════════════════════════════════════ */
 .testi-section {
     position: relative;
+    height: 78vh;
     background: var(--navy);
-    padding: 100px 0 80px;
+    padding: 50px 0 80px;
     overflow: hidden;
     font-family: var(--font-body);
 }

@@ -31,12 +31,12 @@
 
     <!-- Navbar -->
     <nav class="py-2 px-6 md:px-12"
-        style="position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.2);">
+        style="position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.2); margin: 1rem">
         <div class="max-w-[1400px] mx-auto flex items-center justify-between container">
 
             <div class="flex-shrink-0">
                 <a href="#hero">
-                    <img src="assets/images/viom.png" alt="VIOM Cleaning" class="h-20 w-auto">
+                    <img src="assets/images/viom.png" alt="VIOM Cleaning" class="h-14 w-auto">
                 </a>
             </div>
 
@@ -52,11 +52,15 @@
                     <div class="bg-[#081c3a] text-white w-9 h-9 rounded-full flex items-center justify-center mr-3">
                         <i class="fa fa-phone text-xs"></i>
                     </div>
-                    <span class="font-normal text-gray-800 text-sm">+61 8745 145 896</span>
+                    <span class="font-normal text-gray-800 text-sm">
+                        <a href="https://wa.me/61457895874" target="_blank" class="hover:text-gray-900 transition">
+                            +61 8745 145 896
+                        </a>
+                    </span>
                 </div>
                 <a href="#get-quote"
                     class="bg-[#FCD303] hover:bg-yellow-400 text-[#081c3a] font-normal px-7 py-2.5 rounded-full h-11 flex items-center transition text-sm">
-                    Free Quote
+                    Apply for Job
                 </a>
             </div>
 
@@ -72,19 +76,23 @@
             <a href="#faq" class="block text-base font-medium text-gray-700 py-1">FAQ</a>
             <div class="flex flex-col space-y-3 pt-3 border-t border-gray-100">
                 <div class="flex items-center text-gray-700 font-medium text-sm">
-                    <i class="fa fa-phone mr-3 text-[#55b331] text-xs"></i> +61 8745 145 896
+                    <i class="fa fa-phone mr-3 text-[#55b331] text-xs"></i>
+                    <a href="https://wa.me/61457895874" target="_blank" class="hover:text-gray-900 transition">
+                        +61 8745 145 896
+                    </a>
                 </div>
                 <a href="#get-quote"
-                    class="bg-[#FCD303] text-center py-3 rounded-full font-bold text-sm text-[#081c3a]">Free Quote</a>
+                    class="bg-[#FCD303] text-center py-3 rounded-full font-bold text-sm text-[#081c3a]">Apply for
+                    Job</a>
             </div>
         </div>
     </nav>
 
 
     <!-- Hero -->
-    <section id="hero" class="dust-section relative bg-white overflow-hidden min-h-screen flex items-stretch">
-        <div class="w-full flex" style="padding: clamp(12px, 2vh, 30px) clamp(16px, 8vw, 100px);">
-            <div class="relative flex flex-col w-full overflow-hidden" style="border-radius: 1.5rem; min-height: 85vh;">
+    <section id="hero" class="dust-section relative bg-white overflow-hidden flex items-stretch h-180">
+        <div class="w-full flex" style="padding: 0 clamp(16px, 8vw, 100px);">
+            <div class="relative flex flex-col w-full overflow-hidden" style="border-radius: 1.5rem; min-height: 8vh;">
 
                 <!-- Carousel images -->
                 <div class="relative w-full" style="height: 85vh; border-radius: 1.5rem; overflow: hidden;">
@@ -121,7 +129,8 @@
                 </div>
 
                 <!-- Card overlay -->
-                <div class="absolute inset-0 pointer-events-none" style="z-index: 2;">
+                <div class="absolute inset-0 pointer-events-none"
+                    style="z-index: 2; padding-bottom: clamp(40px, 8vh, 120px);">
                     <div class="max-w-[1440px] mx-auto h-full px-4 md:px-12 lg:px-20
                     flex items-end pb-10
                     md:flex md:items-center md:pb-0">
@@ -180,7 +189,7 @@
     </section>
 
     <!-- How It Works -->
-    <section id="howitworks" class="dust-section py-20 bg-[#f0f7ed]">
+    <section id="howitworks" class="dust-section py-12 bg-[#f0f7ed]">
         <div class="container mx-auto px-4 max-w-5xl">
 
             <div id="howitworksHeader" class="text-center mb-14 opacity-0">
@@ -212,7 +221,7 @@
                         class="absolute top-4 right-6 text-[88px] font-black text-white/10 leading-none select-none">02</span>
                     <div class="relative z-10">
                         <div class="bg-white/15 w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-broom text-white text-xl"></i>
+                            <i class="fa-solid fa-calendar-check text-white text-xl"></i>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3">Get Customized Quote</h4>
                         <p class="text-white/60 text-[15px] leading-relaxed">Receive a tailored quote based on your
@@ -227,7 +236,7 @@
                     <div class="relative z-10">
                         <div
                             class="bg-[#55b331] w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-green-500/20">
-                            <i class="fa-solid fa-mug-hot text-white text-xl"></i>
+                            <i class="fa-solid fa-broom text-white text-xl"></i>
                         </div>
                         <h4 class="text-xl font-bold text-[#081c3a] mb-3">We Clean</h4>
                         <p class="text-gray-500 text-[15px] leading-relaxed">Our professional team arrives on time and
@@ -262,21 +271,17 @@
 
                     <ul class="space-y-4 mb-10 about-text opacity-0">
                         <li class="flex items-start gap-3">
-                            <div class="bg-[#55b331] rounded-full p-1 mt-1 shrink-0">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
-                                    viewBox="0 0 24 24">
-                                    <path d="M5 13l4 4L19 7"></path>
-                                </svg>
+                            <div class="shrink-0 mt-0" style="width: 16px; height: 16px;">
+                                <img src="assets/images/tick.png" alt="Tick"
+                                    style="width: 16px; height: 16px; object-fit: contain;">
                             </div>
                             <span class="text-[#081c3a] font-semibold text-sm md:text-base">1+ years serving Melbourne
                                 homes and businesses</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <div class="bg-[#55b331] rounded-full p-1 mt-1 shrink-0">
-                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="4"
-                                    viewBox="0 0 24 24">
-                                    <path d="M5 13l4 4L19 7"></path>
-                                </svg>
+                            <div class="shrink-0 mt-1" style="width: 16px; height: 16px;">
+                                <img src="assets/images/tick.png" alt="Tick"
+                                    style="width: 16px; height: 16px; object-fit: contain;">
                             </div>
                             <span class="text-[#081c3a] font-semibold text-sm md:text-base">All cleaners are
                                 background-checked and fully insured</span>
@@ -418,22 +423,50 @@
 
 
     <!-- Testimonials -->
+    <!-- Testimonials -->
     <section id="testimonials" class="dust-section testi-section">
-        <span class="testi-watermark" aria-hidden="true">Reviews</span>
+        <!-- <span class="testi-watermark" aria-hidden="true">Reviews</span> -->
         <div class="testi-wrap">
 
             <div class="testi-head testi-reveal">
                 <div>
-                    <p class="testi-eyebrow"><span class="testi-eyebrow-dot"></span>Client Stories</p>
-                    <h2 class="testi-title">Trusted by Melbourne<br><em>homes &amp; offices</em></h2>
+                    <p class="testi-eyebrow">
+                        <span class="testi-eyebrow-dot"></span>
+                        Client Stories
+                    </p>
+
+                    <h2 class="testi-title">
+                        What our client say<em> says</em>
+                    </h2>
                 </div>
-                <div class="testi-rating-box">
-                    <div class="testi-stars-row">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+                <div class="flex items-center gap-4 flex-wrap">
+
+                    <div class="testi-rating-box">
+                        <div class="testi-stars-row">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="testi-rating-num">
+                            4.9 <span>/ 5</span>
+                        </p>
+
+                        <p class="testi-rating-label">
+                            Average from 120+ reviews
+                        </p>
                     </div>
-                    <p class="testi-rating-num">4.9 <span>/ 5</span></p>
-                    <p class="testi-rating-label">Average from 120+ reviews</p>
+
+                    <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank"
+                        class="inline-flex items-center gap-2 rounded-full bg-black px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-neutral-900">
+
+                        <i class="fa-brands fa-google text-base"></i>
+                        Leave a Review
+                    </a>
+
                 </div>
             </div>
 
@@ -445,20 +478,38 @@
                             <div class="testi-card">
                                 <div class="testi-card-top">
                                     <div class="testi-card-stars">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                            class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <span class="testi-card-tag">Move-out Clean</span>
+
+                                    <span class="testi-card-tag">
+                                        Move-out Clean
+                                    </span>
                                 </div>
-                                <blockquote class="testi-card-quote">"Booked a deep clean before moving out of my
-                                    apartment. The team was punctual, thorough, and the place looked better than when I
-                                    first moved in."</blockquote>
+
+                                <blockquote class="testi-card-quote">
+                                    "Booked a deep clean before moving out of my
+                                    apartment. The team was punctual, thorough,
+                                    and the place looked better than when I
+                                    first moved in."
+                                </blockquote>
+
                                 <div class="testi-card-author">
-                                    <div class="testi-avatar" style="--c: #55b331">SS</div>
+                                    <div class="testi-avatar" style="--c: #55b331">
+                                        SS
+                                    </div>
+
                                     <div>
-                                        <p class="testi-author-name">Swostika Sharma</p>
-                                        <p class="testi-author-role">Residential Client · Melbourne CBD</p>
+                                        <p class="testi-author-name">
+                                            Swostika Sharma
+                                        </p>
+
+                                        <p class="testi-author-role">
+                                            Residential Client · Melbourne CBD
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -468,20 +519,37 @@
                             <div class="testi-card testi-card--featured">
                                 <div class="testi-card-top">
                                     <div class="testi-card-stars">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                            class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <span class="testi-card-tag">Office Regular</span>
+
+                                    <span class="testi-card-tag">
+                                        Office Regular
+                                    </span>
                                 </div>
-                                <blockquote class="testi-card-quote">"We use VIOM for our office every fortnight.
-                                    Booking is seamless, the cleaners are completely reliable, and the office is always
-                                    spotless on Monday morning."</blockquote>
+
+                                <blockquote class="testi-card-quote">
+                                    "We use VIOM for our office every fortnight.
+                                    Booking is seamless, the cleaners are completely reliable,
+                                    and the office is always spotless on Monday morning."
+                                </blockquote>
+
                                 <div class="testi-card-author">
-                                    <div class="testi-avatar" style="--c: #1e6fa8">AS</div>
+                                    <div class="testi-avatar" style="--c: #1e6fa8">
+                                        AS
+                                    </div>
+
                                     <div>
-                                        <p class="testi-author-name">Aaravi Shrestha</p>
-                                        <p class="testi-author-role">Commercial Client · Southbank</p>
+                                        <p class="testi-author-name">
+                                            Aaravi Shrestha
+                                        </p>
+
+                                        <p class="testi-author-role">
+                                            Commercial Client · Southbank
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -491,20 +559,38 @@
                             <div class="testi-card">
                                 <div class="testi-card-top">
                                     <div class="testi-card-stars">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                            class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <span class="testi-card-tag">Kitchen &amp; Bath</span>
+
+                                    <span class="testi-card-tag">
+                                        Kitchen &amp; Bath
+                                    </span>
                                 </div>
-                                <blockquote class="testi-card-quote">"Requested a kitchen and bathroom deep clean.
-                                    Exceptional work, pricing was transparent upfront, and scheduling took under two
-                                    minutes. Will book again."</blockquote>
+
+                                <blockquote class="testi-card-quote">
+                                    "Requested a kitchen and bathroom deep clean.
+                                    Exceptional work, pricing was transparent upfront,
+                                    and scheduling took under two minutes.
+                                    Will book again."
+                                </blockquote>
+
                                 <div class="testi-card-author">
-                                    <div class="testi-avatar" style="--c: #8b5ea6">BB</div>
+                                    <div class="testi-avatar" style="--c: #8b5ea6">
+                                        BB
+                                    </div>
+
                                     <div>
-                                        <p class="testi-author-name">Binod Bhandari</p>
-                                        <p class="testi-author-role">Residential Client · St Kilda</p>
+                                        <p class="testi-author-name">
+                                            Binod Bhandari
+                                        </p>
+
+                                        <p class="testi-author-role">
+                                            Residential Client · St Kilda
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -519,10 +605,12 @@
                         <span class="testi-dot" data-idx="1"></span>
                         <span class="testi-dot" data-idx="2"></span>
                     </div>
+
                     <div class="testi-arrows">
                         <button class="testi-arrow" id="testiPrev" aria-label="Previous review">
                             <i class="fa-solid fa-arrow-left"></i>
                         </button>
+
                         <button class="testi-arrow" id="testiNext" aria-label="Next review">
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
@@ -721,11 +809,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="dust-section bg-[#081c3a] text-white py-16 px-6 md:px-12">
+    <footer class="dust-section bg-[#081c3a] text-white py-12 px-6 md:px-12">
         <div class="container mx-auto max-w-[1300px]">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-4">
                 <div>
-                    <img src="assets/images/logo.jpeg" alt="VIOM Cleaning" class="h-17 w-auto mb-4 rounded-lg">
+                    <img src="assets/images/viom.png" alt="VIOM Cleaning" class="h-17 w-auto mb-4 rounded-lg">
                     <p class="text-white/55 text-sm leading-relaxed max-w-xs">
                         Professional cleaning services for homes and offices across Melbourne.
                     </p>
@@ -745,22 +833,27 @@
                     <ul class="space-y-3 text-sm text-white/55">
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-phone text-[#55b331] w-4"></i>
-                            <a href="tel:+618745145896" class="hover:text-white transition">+61 8745 145 896</a>
+                            <a href="https://wa.me/61457895874" target="_blank" class="hover:text-white transition">
+                                +61 8745 145 896
+                            </a>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-envelope text-[#55b331] w-4"></i>
-                            <a href="mailto:info@viomcleaning.com.au"
-                                class="hover:text-white transition">info@viomcleaning.com.au</a>
+                            <a href="mailto:info@viomservices.com"
+                                class="hover:text-white transition">info@viomservices.com</a>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-[#55b331] w-4 mt-0.5"></i>
-                            <span>Melbourne, Victoria, Australia</span>
+                            <i class="fa-solid fa-location-dot text-[#55b331] w-4 mt-1"></i>
+                            <div class="flex flex-col">
+                                <p>Melbourne, Victoria, Australia</p>
+                                <p>Brisbane, Queensland, Australia</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-8 text-center text-white/35 text-sm">
-                &copy; 2024 VIOM Cleaning Services. All rights reserved.
+            <div class="border-t border-white/10 pt-4 text-center text-white/35 text-sm">
+                &copy; <span id="year"></span> VIOM Cleaning Services. All rights reserved.
             </div>
         </div>
     </footer>
@@ -771,6 +864,15 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/dust.js"></script>
+
+    <script>
+        (function () {
+            const yearElement = document.getElementById("year");
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        })();
+    </script>
 
     <script>
         (function () {
