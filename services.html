@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services — VIOM Cleaning Services</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dust.css">
+
+    <style>
+        /* ── Services page hero ── */
+        .services-page-hero {
+            background: #f0f7ed;
+            padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 5vw, 70px);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .services-page-hero::after {
+            content: 'CLEAN';
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            font-family: var(--font-display);
+            font-size: clamp(80px, 14vw, 180px);
+            color: rgba(85, 179, 49, 0.06);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .services-page-hero-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Detailed service cards ── */
+        .service-detail-section {
+            padding: 100px 0 80px;
+            background: #fff;
+        }
+
+        .service-detail-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 5vw, 72px);
+            align-items: center;
+            padding: clamp(40px, 5vw, 64px) 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .service-detail-grid:last-child {
+            border-bottom: none;
+        }
+
+        .service-detail-grid.reverse {
+            direction: rtl;
+        }
+
+        .service-detail-grid.reverse>* {
+            direction: ltr;
+        }
+
+        @media (max-width: 768px) {
+
+            .service-detail-grid,
+            .service-detail-grid.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+        }
+
+        .service-detail-img {
+            width: 100%;
+            height: clamp(240px, 35vw, 400px);
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            display: block;
+        }
+
+        .service-detail-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--green-pale);
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        .service-detail-features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0 28px;
+        }
+
+        .service-detail-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .service-detail-feature i {
+            color: var(--green);
+            font-size: 13px;
+            width: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ── Why choose us ── */
+        .why-section {
+            padding: 100px 0 80px;
+            background: #081c3a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-section::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -60px;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            border: 1px solid rgba(85, 179, 49, 0.12);
+            pointer-events: none;
+        }
+
+        .why-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 52px;
+        }
+
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-section {
+                padding: 60px 0;
+            }
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            transition: background var(--transition), border-color var(--transition), transform var(--transition);
+        }
+
+        .why-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(85, 179, 49, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .why-card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(85, 179, 49, 0.15);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #55b331;
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        /* ── Reveal ── */
+        .srv-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .srv-reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (max-width: 900px) {
+            .service-detail-section {
+                padding: 72px 0;
+            }
+
+            .why-section {
+                padding: 72px 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .service-detail-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar — identical to index.html -->
+    <nav class="py-2 px-6 md:px-12"
+        style="position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.2); margin: 1rem 0">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between container">
+
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="assets/images/viom.png" alt="VIOM Cleaning" class="h-14 w-auto">
+                </a>
+            </div>
+
+            <ul class="hidden lg:flex items-center space-x-10 text-[18px] font-normal text-gray-700">
+                <li><a href="#hero" class="hover:text-[#55b331] transition active">Home</a></li>
+                <li><a href="services.html" class="hover:text-[#55b331] transition">Services</a></li>
+                <li><a href="aboutUs.html" class="hover:text-[#55b331] transition">About Us</a></li>
+                <li><a href="contact.html" class="hover:text-[#55b331] transition">Contact</a></li>
+            </ul>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="flex items-center border border-gray-200 rounded-full pl-1 pr-5 py-1 h-11">
+                    <div class="bg-[#081c3a] text-white w-9 h-9 rounded-full flex items-center justify-center mr-3">
+                        <i class="fa fa-phone text-xs"></i>
+                    </div>
+                    <span class="font-normal text-gray-800 text-sm">
+                        <a href="https://wa.me/61457895874" target="_blank" class="hover:text-gray-900 transition">
+                            +61 8745 145 896
+                        </a>
+                    </span>
+                </div>
+                <a href="#get-quote"
+                    class="bg-[#FCD303] hover:bg-yellow-400 text-[#081c3a] font-normal px-7 py-2.5 rounded-full h-11 flex items-center transition text-sm">
+                    Get a Quote
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="lg:hidden text-gray-700 text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 space-y-3 pb-4 border-t border-gray-100 pt-4">
+            <a href="index.html" class="block text-base font-medium text-gray-700 py-1">Home</a>
+            <a href="services.html" class="block text-base font-medium text-gray-700 py-1">Services</a>
+            <a href="aboutUs.html" class="block text-base font-medium text-gray-700 py-1">About Us</a>
+            <a href="index.html#faq" class="block text-base font-medium text-gray-700 py-1">FAQ</a>
+            <div class="flex flex-col space-y-3 pt-3 border-t border-gray-100">
+                <div class="flex items-center text-gray-700 font-medium text-sm">
+                    <i class="fa fa-phone mr-3 text-[#55b331] text-xs"></i>
+                    <a href="https://wa.me/61457895874" target="_blank" class="hover:text-gray-900 transition">
+                        +61 8745 145 896
+                    </a>
+                </div>
+                <a href="#get-quote"
+                    class="bg-[#FCD303] text-center py-3 rounded-full font-bold text-sm text-[#081c3a]">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ── PAGE HERO ── -->
+    <section class="services-page-hero">
+        <div class="services-page-hero-inner srv-reveal">
+            <p class="eyebrow">What We Offer</p>
+            <h1 class="display-heading mb-5">Our Cleaning <em>Services</em></h1>
+            <p class="text-gray-600 leading-relaxed mx-auto"
+                style="font-size: clamp(15px, 1.4vw, 17px); max-width: 520px;">
+                Tailored commercial and facilities cleaning across Melbourne and Brisbane — every space, every schedule.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ── SERVICES OVERVIEW CARDS ── -->
+    <section class="dust-section services-section" style="padding-top: 80px;">
+        <div class="container">
+            <div class="services-grid">
+
+                <a href="#corporate" class="service-card reveal" data-index="01">
+                    <div class="service-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop"
+                            alt="Corporate Offices">
+                        <div class="service-card__tag">Most Popular</div>
+                    </div>
+                    <div class="service-card__body">
+                        <div class="service-card__icon"><i class="fa-solid fa-building"></i></div>
+                        <div class="service-card__content">
+                            <h3 class="service-card__title">Corporate Offices</h3>
+                            <p class="service-card__desc">Professional daily or periodic cleaning for offices of all
+                                sizes.</p>
+                        </div>
+                        <div class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="#colleges" class="service-card reveal" data-index="02" style="transition-delay: 0.08s">
+                    <div class="service-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&auto=format&fit=crop"
+                            alt="Colleges & Institutions">
+                    </div>
+                    <div class="service-card__body">
+                        <div class="service-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="service-card__content">
+                            <h3 class="service-card__title">Colleges & Institutions</h3>
+                            <p class="service-card__desc">Thorough cleaning of classrooms, labs, halls, and common
+                                areas.</p>
+                        </div>
+                        <div class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="#rto" class="service-card reveal" data-index="03" style="transition-delay: 0.16s">
+                    <div class="service-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format&fit=crop"
+                            alt="RTO Facilities">
+                    </div>
+                    <div class="service-card__body">
+                        <div class="service-card__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <div class="service-card__content">
+                            <h3 class="service-card__title">RTO Facilities</h3>
+                            <p class="service-card__desc">Compliant cleaning for registered training organisations.</p>
+                        </div>
+                        <div class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="#shared" class="service-card reveal" data-index="04" style="transition-delay: 0.24s">
+                    <div class="service-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&auto=format&fit=crop"
+                            alt="Shared Workspaces">
+                    </div>
+                    <div class="service-card__body">
+                        <div class="service-card__icon"><i class="fa-solid fa-people-group"></i></div>
+                        <div class="service-card__content">
+                            <h3 class="service-card__title">Shared Workspaces</h3>
+                            <p class="service-card__desc">Keep co-working spaces fresh and welcoming for every member.
+                            </p>
+                        </div>
+                        <div class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="#common" class="service-card reveal" data-index="05" style="transition-delay: 0.32s">
+                    <div class="service-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&auto=format&fit=crop"
+                            alt="Building Common Areas">
+                    </div>
+                    <div class="service-card__body">
+                        <div class="service-card__icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div class="service-card__content">
+                            <h3 class="service-card__title">Building Common Areas</h3>
+                            <p class="service-card__desc">Lobbies, lifts, stairwells and shared spaces kept spotless.
+                            </p>
+                        </div>
+                        <div class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="trust-bar reveal" style="margin-top: 52px;">
+                <div class="trust-bar__item"><i class="fa-solid fa-shield-halved"></i><span>Fully insured</span></div>
+                <div class="trust-bar__divider"></div>
+                <div class="trust-bar__item"><i class="fa-solid fa-leaf"></i><span>Eco-friendly products</span></div>
+                <div class="trust-bar__divider"></div>
+                <div class="trust-bar__item"><i class="fa-solid fa-clock-rotate-left"></i><span>Flexible
+                        scheduling</span></div>
+                <div class="trust-bar__divider"></div>
+                <div class="trust-bar__item"><i class="fa-solid fa-star"></i><span>4.9 / 5 rating</span></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ── DETAILED SERVICE BREAKDOWN ── -->
+    <section class="service-detail-section">
+        <div class="service-detail-inner">
+
+            <!-- Corporate Offices -->
+            <div class="service-detail-grid srv-reveal" id="corporate">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop"
+                    alt="Corporate Offices" class="service-detail-img">
+                <div>
+                    <span class="service-detail-tag"><i class="fa-solid fa-building"></i> Corporate Offices</span>
+                    <h2 class="display-heading mb-4">A Clean Office.<br><em>A Productive Team.</em></h2>
+                    <p class="text-gray-600 leading-relaxed mb-2" style="font-size: 15px;">
+                        We provide reliable, discreet office cleaning tailored around your business hours — before
+                        opening, after close, or on weekends.
+                    </p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Desks, reception areas &
+                            meeting rooms</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Kitchens, bathrooms &
+                            breakout spaces</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Daily, weekly or
+                            fortnightly scheduling</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Eco-friendly, non-toxic
+                            products</div>
+                    </div>
+                    <a href="#get-quote"
+                        class="inline-block bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-3 px-8 rounded-full transition text-sm">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colleges -->
+            <div class="service-detail-grid reverse srv-reveal" id="colleges" style="transition-delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&auto=format&fit=crop"
+                    alt="Colleges & Institutions" class="service-detail-img">
+                <div>
+                    <span class="service-detail-tag"><i class="fa-solid fa-graduation-cap"></i> Colleges &
+                        Institutions</span>
+                    <h2 class="display-heading mb-4">Clean Spaces.<br><em>Better Learning.</em></h2>
+                    <p class="text-gray-600 leading-relaxed mb-2" style="font-size: 15px;">
+                        Educational environments demand consistent, hygienic cleaning. We work around your timetable to
+                        keep every corner campus-ready.
+                    </p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Classrooms, labs & lecture
+                            halls</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Canteens, toilets &
+                            corridors</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Holiday deep cleans
+                            available</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Fully insured and vetted
+                            staff</div>
+                    </div>
+                    <a href="#get-quote"
+                        class="inline-block bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-3 px-8 rounded-full transition text-sm">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+
+            <!-- RTO -->
+            <div class="service-detail-grid srv-reveal" id="rto" style="transition-delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format&fit=crop"
+                    alt="RTO Facilities" class="service-detail-img">
+                <div>
+                    <span class="service-detail-tag"><i class="fa-solid fa-chalkboard-user"></i> RTO Facilities</span>
+                    <h2 class="display-heading mb-4">Compliant.<br><em>Consistent. Clean.</em></h2>
+                    <p class="text-gray-600 leading-relaxed mb-2" style="font-size: 15px;">
+                        Registered training organisations need cleaning that meets compliance standards. We deliver
+                        thorough, documented cleaning for audit-ready facilities.
+                    </p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Training rooms & workshop
+                            areas</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Compliance-friendly
+                            documentation</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Equipment & surface
+                            sanitisation</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Flexible scheduling around
+                            classes</div>
+                    </div>
+                    <a href="#get-quote"
+                        class="inline-block bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-3 px-8 rounded-full transition text-sm">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+
+            <!-- Shared Workspaces -->
+            <div class="service-detail-grid reverse srv-reveal" id="shared" style="transition-delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&auto=format&fit=crop"
+                    alt="Shared Workspaces" class="service-detail-img">
+                <div>
+                    <span class="service-detail-tag"><i class="fa-solid fa-people-group"></i> Shared Workspaces</span>
+                    <h2 class="display-heading mb-4">Always Fresh.<br><em>Always Welcoming.</em></h2>
+                    <p class="text-gray-600 leading-relaxed mb-2" style="font-size: 15px;">
+                        Co-working spaces see high footfall daily. We keep your members' environment clean, safe and
+                        professional — every single day.
+                    </p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Hot desks, private offices
+                            & pods</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Shared kitchens & lounge
+                            areas</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Daily cleaning before
+                            members arrive</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Recurring discounts
+                            available</div>
+                    </div>
+                    <a href="#get-quote"
+                        class="inline-block bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-3 px-8 rounded-full transition text-sm">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+
+            <!-- Building Common Areas -->
+            <div class="service-detail-grid srv-reveal" id="common" style="transition-delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&auto=format&fit=crop"
+                    alt="Building Common Areas" class="service-detail-img">
+                <div>
+                    <span class="service-detail-tag"><i class="fa-solid fa-building-columns"></i> Building Common
+                        Areas</span>
+                    <h2 class="display-heading mb-4">First Impressions.<br><em>Always Spotless.</em></h2>
+                    <p class="text-gray-600 leading-relaxed mb-2" style="font-size: 15px;">
+                        Lobbies, lifts, stairwells and car parks are the face of your building. We make sure they stay
+                        clean and presentable at all times.
+                    </p>
+                    <div class="service-detail-features">
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Lobbies, lifts &
+                            stairwells</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Carparks & outdoor entry
+                            areas</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> High-frequency touch point
+                            sanitisation</div>
+                        <div class="service-detail-feature"><i class="fa-solid fa-check"></i> Scheduled or on-call
+                            cleaning</div>
+                    </div>
+                    <a href="#get-quote"
+                        class="inline-block bg-[#fcd303] hover:bg-yellow-400 text-[#081c3a] font-bold py-3 px-8 rounded-full transition text-sm">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ── WHY CHOOSE US ── -->
+    <section class="why-section">
+        <div class="why-inner">
+            <div class="srv-reveal" style="text-align: center; max-width: 600px; margin: 0 auto 0;">
+                <p class="eyebrow" style="color: #55b331;">Why VIOM</p>
+                <h2 class="display-heading" style="color: #fff;">Why Businesses <em style="color: #fcd303;">Choose
+                        Us</em></h2>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card srv-reveal">
+                    <div class="why-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">Fully Insured</h3>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.65;">Every cleaner is
+                        background-checked and covered by full public liability insurance.</p>
+                </div>
+                <div class="why-card srv-reveal" style="transition-delay: 0.08s;">
+                    <div class="why-card-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">Eco-Friendly</h3>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.65;">Non-toxic,
+                        biodegradable products — safe for your people and the environment.</p>
+                </div>
+                <div class="why-card srv-reveal" style="transition-delay: 0.16s;">
+                    <div class="why-card-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">Flexible Scheduling</h3>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.65;">Morning, evening or
+                        weekend slots — we work around your business, not the other way around.</p>
+                </div>
+                <div class="why-card srv-reveal" style="transition-delay: 0.04s;">
+                    <div class="why-card-icon"><i class="fa-solid fa-tag"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">Transparent Pricing</h3>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.65;">Itemised quotes before
+                        every job. No hidden fees, no surprises — ever.</p>
+                </div>
+                <div class="why-card srv-reveal" style="transition-delay: 0.12s;">
+                    <div class="why-card-icon"><i class="fa-solid fa-rotate"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">Recurring Discounts</h3>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.65;">Weekly and fortnightly
+                        cleans come with reduced rates — the more consistent, the more you save.</p>
+                </div>
+                <div class="why-card srv-reveal" style="transition-delay: 0.20s;">
+                    <div class="why-card-icon"><i class="fa-solid fa-star"></i></div>
+                    <h3 class="font-bold text-white text-lg mb-2">4.9 / 5 Rating</h3>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.65;">Consistently rated
+                        excellent by our clients across Melbourne and Brisbane.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ── GET QUOTE ── -->
+    <section id="get-quote" class="dust-section quote-section">
+        <div class="container">
+
+            <div class="quote-header quote-reveal">
+                <p class="eyebrow">Free Estimate</p>
+                <h2 class="display-heading">Get a <em>Quote</em></h2>
+                <p class="section-subtext">No hidden fees. We'll confirm within 24 hours.</p>
+            </div>
+
+            <div class="quote-grid">
+
+                <div class="quote-form-card quote-reveal">
+                    <form action="#" class="quote-form">
+                        <div class="quote-fields-grid">
+                            <div class="quote-field">
+                                <label class="quote-label">Your name</label>
+                                <input type="text" placeholder="John Smith" class="quote-input">
+                            </div>
+                            <div class="quote-field">
+                                <label class="quote-label">Email</label>
+                                <input type="email" placeholder="john@email.com" class="quote-input">
+                            </div>
+                            <div class="quote-field">
+                                <label class="quote-label">Phone</label>
+                                <input type="tel" placeholder="04xx xxx xxx" class="quote-input">
+                            </div>
+                            <div class="quote-field">
+                                <label class="quote-label">Property size</label>
+                                <input type="text" placeholder="e.g. 120 m²" class="quote-input">
+                            </div>
+                        </div>
+
+                        <div class="quote-field quote-field--full">
+                            <label class="quote-label">Service type</label>
+                            <div class="quote-select-wrap">
+                                <select class="quote-input quote-select">
+                                    <option value="">Select a service</option>
+                                    <option>Corporate Offices</option>
+                                    <option>Colleges & Institutions</option>
+                                    <option>RTO Facilities</option>
+                                    <option>Shared Workspaces</option>
+                                    <option>Building Common Areas</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down quote-select-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="quote-consent">
+                            <input type="checkbox" id="consent" class="quote-checkbox">
+                            <label for="consent" class="quote-consent-label">
+                                I agree to be contacted about my quote request.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="quote-submit">
+                            Request a Quote
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="quote-side quote-reveal">
+                    <div class="quote-image-wrap">
+                        <img src="assets/images/quote.jpg" alt="VIOM Cleaning Team" class="quote-image">
+                        <div class="quote-image-badge">
+                            <div class="quote-image-badge__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <p class="quote-image-badge__title">Fully Insured</p>
+                                <p class="quote-image-badge__sub">Every job, every time</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-trust-list">
+                        <div class="quote-trust-item">
+                            <div class="quote-trust-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <p class="quote-trust-title">Response within 24 hours</p>
+                                <p class="quote-trust-sub">We confirm every booking personally.</p>
+                            </div>
+                        </div>
+                        <div class="quote-trust-item">
+                            <div class="quote-trust-icon"><i class="fa-solid fa-tag"></i></div>
+                            <div>
+                                <p class="quote-trust-title">Transparent pricing</p>
+                                <p class="quote-trust-sub">Itemised estimate — no surprises.</p>
+                            </div>
+                        </div>
+                        <div class="quote-trust-item">
+                            <div class="quote-trust-icon"><i class="fa-solid fa-rotate"></i></div>
+                            <div>
+                                <p class="quote-trust-title">Recurring discounts</p>
+                                <p class="quote-trust-sub">Save more on weekly or fortnightly cleans.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer — identical to index.html -->
+    <footer class="dust-section bg-[#081c3a] text-white py-12 px-6 md:px-12">
+        <div class="container mx-auto max-w-[1300px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-4">
+                <div>
+                    <img src="assets/images/viom.png" alt="VIOM Cleaning" class="h-17 w-auto mb-4 rounded-lg">
+                    <p class="text-white/55 text-sm leading-relaxed max-w-xs">
+                        Professional cleaning services for homes and offices across Melbourne.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-5 text-white/90 text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="text-white/55 hover:text-white transition">Home</a></li>
+                        <li><a href="services.html" class="text-white/55 hover:text-white transition">Services</a></li>
+                        <li><a href="aboutUs.html" class="text-white/55 hover:text-white transition">About Us</a></li>
+                        <li><a href="index.html#faq" class="text-white/55 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#get-quote" class="text-white/55 hover:text-white transition">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-5 text-white/90 text-sm uppercase tracking-wider">Contact</h4>
+                    <ul class="space-y-3 text-sm text-white/55">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-[#55b331] w-4"></i>
+                            <a href="https://wa.me/61457895874" target="_blank" class="hover:text-white transition">+61
+                                8745 145 896</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-[#55b331] w-4"></i>
+                            <a href="mailto:info@viomservices.com"
+                                class="hover:text-white transition">info@viomservices.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-[#55b331] w-4 mt-1"></i>
+                            <div class="flex flex-col">
+                                <p>Melbourne, Victoria, Australia</p>
+                                <p>Brisbane, Queensland, Australia</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-4 text-center text-white/35 text-sm">
+                &copy; <span id="year"></span> VIOM Cleaning Services. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.srv-reveal').forEach(el => observer.observe(el));
+
+        // Quote reveal (reuse from index)
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.fromTo('.quote-reveal',
+                { y: 60, opacity: 0 },
+                {
+                    y: 0, opacity: 1, duration: 1.2, stagger: 0.1, ease: 'power4.out',
+                    scrollTrigger: { trigger: '#get-quote', start: 'top 80%' }
+                }
+            );
+        }
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const trigger = item.querySelector('.faq-trigger');
+            const body = item.querySelector('.faq-body');
+            const inner = item.querySelector('.faq-body p');
+            if (!trigger) return;
+            trigger.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(el => {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                    el.querySelector('.faq-body').style.maxHeight = null;
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    trigger.setAttribute('aria-expanded', 'true');
+                    body.style.maxHeight = (inner ? inner.scrollHeight + 46 : body.scrollHeight) + 'px';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
