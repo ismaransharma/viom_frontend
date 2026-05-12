@@ -21,30 +21,25 @@
 
     <!-- Same stylesheets as index.html — inherits ClashGrotesk + all design tokens -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/dust.css">
-
-    <style>
-
-    </style>
 </head>
 
 <body>
 
     <nav class="py-2 px-6 md:px-12"
-        style="position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.2);">
+        style="position: sticky; top: 0; z-index: 999; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.2); margin: 1rem 0">
         <div class="max-w-[1400px] mx-auto flex items-center justify-between container">
 
             <div class="flex-shrink-0">
-                <a href="#hero">
-                    <img src="assets/images/viom.png" alt="VIOM Cleaning" class="h-20 w-auto">
+                <a href="index.html">
+                    <img src="assets/images/viom.png" alt="VIOM Cleaning" class="h-14 w-auto">
                 </a>
             </div>
 
             <ul class="hidden lg:flex items-center space-x-10 text-[18px] font-normal text-gray-700">
-                <li><a href="#hero" class="hover:text-[#55b331] transition active">Home</a></li>
+                <li><a href="index.html" class="hover:text-[#55b331] transition">Home</a></li>
                 <li><a href="services.html" class="hover:text-[#55b331] transition">Services</a></li>
-                <li><a href="aboutUs.html" class="hover:text-[#55b331] transition">About Us</a></li>
-                <li><a href="contact.html" class="hover:text-[#55b331] transition">Contact</a></li>
+                <li><a href="aboutUs.html" class="hover:text-[#55b331] transition active">About Us</a></li>
+                <li><a href="contactUs.html" class="hover:text-[#55b331] transition">Contact</a></li>
             </ul>
 
             <div class="hidden md:flex items-center space-x-4">
@@ -52,11 +47,15 @@
                     <div class="bg-[#081c3a] text-white w-9 h-9 rounded-full flex items-center justify-center mr-3">
                         <i class="fa fa-phone text-xs"></i>
                     </div>
-                    <span class="font-normal text-gray-800 text-sm">+61 8745 145 896</span>
+                    <span class="font-normal text-gray-800 text-sm">
+                        <a href="https://wa.me/61457895874" target="_blank" class="hover:text-gray-900 transition">
+                            +61 8745 145 896
+                        </a>
+                    </span>
                 </div>
                 <a href="#get-quote"
                     class="bg-[#FCD303] hover:bg-yellow-400 text-[#081c3a] font-normal px-7 py-2.5 rounded-full h-11 flex items-center transition text-sm">
-                    Free Quote
+                    Apply for Job
                 </a>
             </div>
 
@@ -69,17 +68,20 @@
             <a href="#hero" class="block text-base font-medium text-gray-700 py-1">Home</a>
             <a href="#services" class="block text-base font-medium text-gray-700 py-1">Services</a>
             <a href="#about-us" class="block text-base font-medium text-gray-700 py-1">About Us</a>
-            <a href="#faq" class="block text-base font-medium text-gray-700 py-1">FAQ</a>
+            <a href="contactUs.html" class="block text-base font-medium text-gray-700 py-1">Contact</a>
             <div class="flex flex-col space-y-3 pt-3 border-t border-gray-100">
                 <div class="flex items-center text-gray-700 font-medium text-sm">
-                    <i class="fa fa-phone mr-3 text-[#55b331] text-xs"></i> +61 8745 145 896
+                    <i class="fa fa-phone mr-3 text-[#55b331] text-xs"></i>
+                    <a href="https://wa.me/61457895874" target="_blank" class="hover:text-gray-900 transition">
+                        +61 8745 145 896
+                    </a>
                 </div>
                 <a href="#get-quote"
-                    class="bg-[#FCD303] text-center py-3 rounded-full font-bold text-sm text-[#081c3a]">Free Quote</a>
+                    class="bg-[#FCD303] text-center py-3 rounded-full font-bold text-sm text-[#081c3a]">Apply for
+                    Job</a>
             </div>
         </div>
     </nav>
-
 
     <!-- ── HERO ── -->
     <section class="about-page-hero">
@@ -339,7 +341,7 @@
         </div>
     </footer>
 
-    <!-- Scripts — same order as index.html -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
